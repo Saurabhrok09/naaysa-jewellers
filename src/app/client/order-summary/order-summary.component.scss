@@ -1,0 +1,336 @@
+
+.cart-price h1{
+  margin-left: 25px;
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 500;
+}
+.cart-main{
+  display: flex;
+}
+
+.cart-items{
+  margin-top: 30px;
+  margin-left: 70px;
+  width: 58%;
+  height: auto;
+  border-radius: 16px;
+  // .payment-types{
+  //   display: flex;
+  // }
+}
+// Summary Order for laptop
+#heading{
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 28px;
+line-height: 33px;
+color: #5C5E62;
+margin-left: 25px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.cart-items h1{
+  margin-left: 25px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 500;
+  // font-family: var(--font-one);
+}
+
+hr{
+  border-top: 2px solid var(--color-secondary);
+  margin-left: 25px;
+  width: 93%;
+  margin-bottom: 15px;
+}
+#hr {
+color: #969696;
+// width: 100%;
+border: 1px dashed #969696;
+margin-bottom: 15px;
+}
+.cart-price{
+  margin-top: 30px;
+  margin-left: 50px;
+  width: 29%;
+  height: auto;
+
+}
+
+
+.cartBox{
+background: #FFFFFF;
+border: 1px solid #E88F9F;
+box-shadow: 2px 2px 12px rgba(232, 143, 159, 0.3);
+border-radius: 16px;
+}
+.cart-price h1{
+  margin-left: 25px;
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 500;
+}
+.bill{
+width: 100%;
+padding: 25px;
+.uk-flex{
+    // margin-top: 10px;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 450;
+    font-size: var(--xsmall);
+    margin-bottom: 16px;
+}
+.subtotal{
+    font-size: var(--small);
+}
+.primary-button{
+    display: block;
+    width: 100%;
+    font-size: var(--xsmall);
+    margin-top: 25px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+.payNowBtn{
+  display: block;
+  width: 100%;
+height: 64px;
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 22px;
+line-height: 26px;
+text-align: center;
+background: #BB6979;;
+color: #FFFFFF;
+box-shadow: none;
+border-radius: 10px;
+border: none;
+}
+}
+
+.billItems{
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+color: rgba(0, 0, 0, 0.45);
+}
+.totalBillAmount{
+margin-top: 19px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 28px;
+color: #5C5E62;
+}
+.hrDash{
+border: 2px dashed #D7D7D7!important;
+}
+// .cart-price p{
+//     margin-left: 25px;
+//     margin-top: 4px;
+//     margin-bottom: 20px;
+//     color: grey;
+//     font-size: 12px;
+//     font-weight: 600;
+// }
+
+hr.new2 {
+  border-top: 1px dashed grey;
+  width: 87%;
+}
+
+.price-detail{
+  display: flex;
+}
+
+.price-detail h1{
+  font-size: 20px;
+}
+
+.price-detail p{
+  font-size: medium;
+  margin-top: 10px;
+  margin-bottom: -5px;
+  font-weight: 500;
+}
+
+.price-detail-text{
+  width: 65%;
+}
+
+.price-detail-data{
+  // margin-left: 10%;
+  text-align: right;
+}
+
+.pd{
+  color: grey;
+}
+
+.total-price{
+  display: flex;
+}
+
+.total-price p{
+  font-size: 25px;
+  color: black;
+  font-weight: 600;
+  margin-top: 20px;
+  font-size: 20px;
+}
+.mobile-view{
+  display: none;
+}
+#price-final{
+  margin-left: 44%;
+  text-align: right;
+}
+
+.proceed-btn{
+  background-color: var(--color-secondary);
+  color: #ffffff;
+  border: none;
+  width: 40%;
+  height: 40px;
+  border-radius: 8px;
+  margin-left: 55%;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size:large;
+  font-weight: 450;
+}
+
+.proceed-btn:hover, .promo button:hover{
+  cursor: pointer;
+}
+
+a{
+  color: var(--color-secondary);
+  margin-top: 8px;
+  text-decoration: none;
+  font-size: 15px;
+}
+@media (max-width:1300px) {
+  .billItems{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.45);
+    }
+    .totalBillAmount{
+    margin-top: 19px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    color: #5C5E62;
+    }
+}
+@media (max-width:1025px) {
+  .billItems{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.45);
+    }
+    .totalBillAmount{
+    margin-top: 19px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color: #5C5E62;
+    }
+}
+
+
+@media only screen and (max-width: 600px){
+.payment-types{
+  display: block!important;
+}
+  .cart-main{
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      margin-top: 0;
+  }
+  .proceed-btn{
+      display: none;
+  }
+  .cart-items{
+      margin: 0px;
+      width: 100%;
+      background-color: #FFF5FB;
+      box-shadow: none;
+      border: none;
+  }
+  .cart-items h1{
+      font-size: var(--small);
+      font-family: var(--font-one);
+  }
+  .cart-price{
+      display: none;
+  }
+  .mobile-view{
+      display: block;
+      width: 100%;
+      margin: 15px;
+      .mobile-bill{
+          background-color: #fff;
+          margin-top: 5px;
+          padding: 15px;
+          box-shadow: var(--normal-shadow);
+          border: 2px solid var(--color-dark-primary);
+          border-radius: 10px;
+          .uk-flex{
+              justify-content: space-between;
+          }
+          .heading{
+              p:nth-child(1){
+                  font-size: var(--msmall);
+                  font-weight: 500;
+              }
+          }
+          .bill-info{
+              margin-top: 15px;
+              .uk-flex{
+                  p:nth-child(1){
+                      font-size: var(--xsmall);
+                      font-weight: 450;
+                  }
+                  #mart{
+                      margin-top: 15px;
+                  }
+              }
+          }
+      }
+      .place{
+          width: 95%;
+          background-color: var(--color-dark-primary);
+          border: none;
+          border-radius: 5px;
+          padding: 5px;
+          display: block;
+          margin: auto;
+          color: #fff;
+          margin-top: 15px;
+          cursor: pointer;
+          transition: .3s;
+          &:hover{
+              transform: scale(1.1);
+          }
+      }
+  }
+}

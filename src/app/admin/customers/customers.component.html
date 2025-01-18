@@ -1,0 +1,130 @@
+<div class="container">
+  <div class="header">
+    <div class="para">
+        <p id="heading">Users</p>
+    </div>
+    <div class="links">
+        <button><i class="fa-solid fa-tags"></i>Manage Products</button>
+        <button><i class="fa-solid fa-square-plus"></i>Add Products</button>
+        <button><i class="fa-solid fa-toggle-on"></i>Pretty View</button>
+    </div>
+  </div>
+  <div class="uk-margin">
+    <form class="uk-search uk-search-default">
+        <span class="uk-search-icon-flip" uk-search-icon></span>
+        <input class="uk-search-input" type="search" placeholder="Search">
+    </form>
+    <i class="fa-solid fa-bell" id="bell"></i>
+  </div>
+</div>
+  
+<mat-tab-group>
+  <mat-tab label="All Orders"> 
+    <table>
+      <thead>
+    <tr>
+      <th *ngFor="let header of headers">
+        {{ header }}
+      </th>
+  </tr>
+  </thead>
+  
+    <tr *ngFor="let user of users">
+      <td>
+        {{ user.sr }}
+      </td>
+      <td>
+        {{ user.userName }}
+      </td>
+      <td>
+        {{ user.emailId}}
+      </td>
+      <td><div class="purchase">
+        {{ user.noOfPurchase }}
+      </div>
+      </td>
+      <td><div class="member-since">
+        {{ user.memberSince }}
+      </div>
+      </td>
+     <td><div class="phone"><i class="fa-solid fa-phone"></i>
+        {{ user.mobileNo }}
+      </div>
+      </td>
+     
+    </tr>
+  </table>
+  </mat-tab>
+  <mat-tab label="Completed">
+    <table>
+      <thead>
+    <tr>
+      <th *ngFor="let header of headers">
+        {{ header }}
+      </th>
+  </tr>
+  </thead>
+  
+    <tr *ngFor="let user of users">
+      <td>
+        {{ user.sr }}
+      </td>
+      <td>
+        {{ user.userName }}
+      </td>
+      <td>
+        {{ user.emailId}}
+      </td>
+      <td><div class="purchase">
+        {{ user.noOfPurchase }}
+      </div>
+      </td>
+      <td><div class="member-since">
+        {{ user.memberSince }}
+      </div>
+      </td>
+     <td><div class="phone"><i class="fa-solid fa-phone"></i>
+        {{ user.mobileNo }}
+      </div>
+      </td>
+     
+    </tr>
+  </table> </mat-tab>
+  <mat-tab label="Cancelled">
+    <table>
+      <thead>
+    <tr>
+      <th *ngFor="let header of headers">
+        {{ header }}
+      </th>
+  </tr>
+  </thead>
+  
+    <tr *ngFor="let user of users">
+      <td>
+        {{ user.sr }}
+      </td>
+      <td>
+        {{ user.userName }}
+      </td>
+      <td>
+        {{ user.emailId}}
+      </td>
+      <td><div class="purchase">
+        {{ user.noOfPurchase }}
+      </div>
+      </td>
+      <td><div class="member-since">
+        {{ user.memberSince }}
+      </div>
+      </td>
+     <td><div class="phone"><i class="fa-solid fa-phone"></i>
+        {{ user.mobileNo }}
+      </div>
+      </td>
+     
+    </tr>
+  </table>
+  </mat-tab>
+</mat-tab-group>
+

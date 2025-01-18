@@ -1,0 +1,176 @@
+<app-header title="Orders"></app-header>
+
+<mat-tab-group>
+  <mat-tab label="All Orders"> 
+    <table>
+      <thead>
+    <tr>
+      <th *ngFor="let header of headers">
+        {{ header }}
+      </th>
+  </tr>
+  </thead>
+  
+    <tr *ngFor="let order of orders">
+      <td>
+        {{ order.id }}
+      </td>
+      <td>
+        {{ order.name }}
+      </td>
+      <td>
+        {{ order.orderDate }}
+      </td>
+      <td><div class="payment">
+        {{ order.payment }}
+      </div>
+      </td>
+      <td><div class="status">
+        {{ order.status }}
+      </div>
+      </td>
+      <td><div class="total">
+        {{ order.total }}
+      </div>
+      </td>
+      <td><div class="phone"><i class="fa-solid fa-phone"></i>
+        {{ order.mobileNo }}
+      </div>
+      </td>
+      <td>
+          <button class="delete">
+              <i class="fa-solid fa-trash"></i>
+              delete</button>
+  
+          <button class="info">
+              <i class="fa-solid fa-circle-info"></i>
+              info</button>
+        </td>
+    </tr>
+  </table></mat-tab>
+  <mat-tab label="Completed"> 
+    <table>
+      <thead>
+    <tr>
+      <th *ngFor="let header of headers">
+        {{ header }}
+      </th>
+  </tr>
+  </thead>
+  
+    <tr *ngFor="let order of orders">
+      <td>
+        {{ order.id }}
+      </td>
+      <td>
+        {{ order.name }}
+      </td>
+      <td>
+        {{ order.orderDate }}
+      </td>
+      <td><div class="payment">
+        {{ order.payment }}
+      </div>
+      </td>
+      <td><div class="status">
+        {{ order.status }}
+      </div>
+      </td>
+      <td><div class="total">
+        {{ order.total }}
+      </div>
+      </td>
+      <td><div class="phone"><i class="fa-solid fa-phone"></i>
+        {{ order.mobileNo }}
+      </div>
+      </td>
+      <td>
+          <button class="delete">
+              <i class="fa-solid fa-trash"></i>
+              delete</button>
+  
+          <button class="info">
+              <i class="fa-solid fa-circle-info"></i>
+              info</button>
+        </td>
+    </tr>
+  </table>
+  </mat-tab>
+  <mat-tab label="Cancelled"> 
+    <table>
+      <thead>
+    <tr>
+      <th *ngFor="let header of headers">
+        {{ header }}
+      </th>
+  </tr>
+  </thead>
+  
+    <tr *ngFor="let order of orders">
+      <td>
+        {{ order.id }}
+      </td>
+      <td>
+        {{ order.name }}
+      </td>
+      <td>
+        {{ order.orderDate }}
+      </td>
+      <td><div class="payment">
+        {{ order.payment }}
+      </div>
+      </td>
+      <td><div class="status">
+        {{ order.status }}
+      </div>
+      </td>
+      <td><div class="total">
+        {{ order.total }}
+      </div>
+      </td>
+      <td><div class="phone"><i class="fa-solid fa-phone"></i>
+        {{ order.mobileNo }}
+      </div>
+      </td>
+      <td>
+          <button class="delete">
+              <i class="fa-solid fa-trash"></i>
+              delete</button>
+  
+          <button class="info">
+              <i class="fa-solid fa-circle-info"></i>
+              info</button>
+        </td>
+    </tr>
+  </table>
+  </mat-tab>
+</mat-tab-group>
+
+
+<div class="mobile-container">
+  <div class="box">
+    <div class="cont">
+    <p>ID :</p><span class="m-txt">16369</span>
+  </div>
+    <div class="cont">
+    <p>Name :</p><span class="m-txt" >Travis</span>
+  </div>
+    <div class="cont">
+    <p>Order : Date</p><span class="m-txt">07/07/2022</span>
+  </div>
+    <div class="cont">
+    <p>Payment :</p><span class="m-txt">Done</span>
+  </div>
+    <div class="cont">
+    <p>Status :</p><span class="m-txt">Delivered</span>
+  </div>
+    <div class="cont">
+    <p>Total :</p><span class="m-amnt">₹45000</span>
+  </div>
+    <div class="cont">
+    <p>Mobile No. :</p><span class="m-txt">9568876069</span>
+  </div>
+    <button class="d-btn">Delete</button>
+    <button class="i-btn">Info</button>
+  </div>
+</div>

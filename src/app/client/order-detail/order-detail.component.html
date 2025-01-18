@@ -1,0 +1,221 @@
+
+<div class="container">
+  
+  <div class="first-section">
+    <div class="order">
+      <p>Order Id:</p>
+      <p>{{ order_Id }}</p>
+    </div>
+    <p id="status">{{ status }}</p>
+    <p>On {{ delivered }}</p>
+    <div class="product">
+      <div class="image">
+        <img src="assets/image9.png" alt="" />
+      </div>
+      <div class="details">
+        <p>{{ price }}</p>
+        <p>{{ product_Name }}</p>
+        <p>{{ discription }}</p>
+        <div class="stars" *ngIf="!arrived">
+            <div
+              class="star"
+              (click)="toggleActive()"
+              [ngClass]="active ? 'active' : ''"
+            >
+              <i class="ri-star-fill"></i>
+            </div>
+            <div
+              class="star"
+              (click)="toggleActive()"
+              [ngClass]="active ? 'active' : ''"
+            >
+              <i class="ri-star-fill"></i>
+            </div>
+            <div
+              class="star"
+              (click)="toggleActive()"
+              [ngClass]="active ? 'active' : ''"
+            >
+              <i class="ri-star-fill"></i>
+            </div>
+            <div
+              class="star"
+              (click)="toggleActive()"
+              [ngClass]="active ? 'active' : ''"
+            >
+              <i class="ri-star-fill"></i>
+            </div>
+            <div
+              class="star"
+              (click)="toggleActive()"
+              [ngClass]="active ? 'active' : ''"
+            >
+              <i class="ri-star-fill"></i>
+            </div>
+          </div>
+        <b routerLink="/mobile-review" style="cursor: pointer;">Write a review</b>
+      </div>
+    </div>
+    <div class="bill">
+      <p id="heading">Order Details</p>
+      <div class="flex total">
+        <p>Subtotal</p>
+        <p>{{ subtotal_Price }}</p>
+      </div>
+      <div class="flex">
+        <p>Discount</p>
+        <p style="color: black">{{ discount }}</p>
+      </div>
+      <div class="flex">
+        <p>Delivery</p>
+        <p style="color: black">{{ delivery }}</p>
+      </div>
+      <div class="flex">
+        <p>Tax</p>
+        <p style="color: black">{{ tax }}</p>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="flex total">
+        <p>Total</p>
+        <p>{{ total_Price }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="first_section_mobile">
+    <div class="order" >
+        <p>Order Id:</p>
+        <p>{{ order_Id }}</p>
+      </div>
+    <div class="history">
+      <div class="history_img">
+        <img src="../../../assets/ring2.png" alt="" />
+      </div>
+      <div class="history_details">
+        <p>
+          Forevermark Setting Solitaire Ring, White Gold, 1.80 ctw/ Round /15
+        </p>
+
+        <div class="bottom">
+          <b *ngIf="!arrived" style="color: rgb(45, 175, 45)"
+            >Arriving tomorrow</b
+          >
+          <b *ngIf="arrived" style="color: rgb(45, 175, 45)"
+          >Arrived</b
+        >
+        
+          <button *ngIf="arrived">Track Order</button>
+          <button *ngIf="!arrived"  routerLink="/mobile-review">Write A Review</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="second-section">
+    <mat-vertical-stepper>
+      <mat-step>
+        <ng-template matStepLabel
+          >Odered
+          <p>{{ odered }}</p>
+        </ng-template>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel
+          >Shipped
+          <p>{{ shipped }}</p>
+        </ng-template>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel
+          >Out For Delivery
+          <p>{{ out_For_Delivery }}</p>
+        </ng-template>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel
+          >Delivered
+          <p>{{ delivered }}</p>
+        </ng-template>
+      </mat-step>
+    </mat-vertical-stepper>
+    
+  </div>
+  <p style="width: 90%; margin:auto; color:black;font-size:16px;" *ngIf="delivered">Return policy valid till Aug 19</p>
+  <div class="return_policy" *ngIf="delivered">
+    <button>Return</button>
+    
+    <div class="stars" >
+        <div
+          class="star"
+          (click)="toggleActive()"
+          [ngClass]="active ? 'active' : ''"
+        >
+          <i class="ri-star-fill"></i>
+        </div>
+        <div
+          class="star "
+          (click)="toggleActive()"
+          [ngClass]="active ? 'active' : ''"
+        >
+          <i class="ri-star-fill"></i>
+        </div>
+        <div
+          class="star"
+          (click)="toggleActive()"
+          [ngClass]="active ? 'active' : ''"
+        >
+          <i class="ri-star-fill"></i>
+        </div>
+        <div
+          class="star"
+          (click)="toggleActive()"
+          [ngClass]="active ? 'active' : ''"
+        >
+          <i class="ri-star-fill"></i>
+        </div>
+        <div
+          class="star"
+          (click)="toggleActive()"
+          [ngClass]="active ? 'active' : ''"
+        >
+          <i class="ri-star-fill"></i>
+        </div>
+      </div>
+  </div>
+  <div class="order_details">
+    <b class="heading">Order Details</b>
+      <div class="price_details">
+        <div class="bill">
+            <p id="heading">Order Summary</p>
+            <hr>
+            <div class="flex total">
+              <p>Subtotal</p>
+              <p>{{ subtotal_Price }}</p>
+            </div>
+            <div class="flex">
+              <p>Discount</p>
+              <p style="color: black">{{ discount }}</p>
+            </div>
+            <div class="flex">
+              <p>Delivery</p>
+              <p style="color: black">{{ delivery }}</p>
+            </div>
+            <div class="flex">
+              <p>Tax</p>
+              <p style="color: black">{{ tax }}</p>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="flex total">
+              <p>Total</p>
+              <p>{{ total_Price }}</p>
+            </div>
+          </div>
+  
+    </div>
+    <b  class="heading">Shipping Details</b>
+    <div class="shipping_details">
+        <b>John Doe</b>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis explicabo eaque qui officiis! Odit sed voluptatum sunt unde sapiente officiis.</p>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

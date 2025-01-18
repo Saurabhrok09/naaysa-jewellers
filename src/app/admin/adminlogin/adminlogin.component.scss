@@ -1,0 +1,91 @@
+form {
+  height: 520px;
+  width: 400px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 4px 23px rgba(0, 0, 0, 0.25);
+  padding: 40px 35px;
+  color: #000000;
+  letter-spacing: 0.5px;
+  background-color: #ffd5dc;
+}
+
+form h3 {
+  font-size: var(--large);
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+  color: #fb889c;
+}
+
+label {
+  display: block;
+  margin-top: 30px;
+  font-size: var(--xsmall);
+  font-weight: 500;
+}
+input {
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 0 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+  border: none;
+}
+
+.fp-btn {
+  color: #fb889c;
+  background: none;
+  border: none;
+  margin-top: 10px;
+}
+
+.login-btn {
+  margin-top: 50px;
+  width: 100%;
+  background-color: #fb889c;
+  color: #ffffff;
+  padding: 10px 0;
+  font-size: var(--xsmall);
+  font-weight: 600;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.social {
+  margin-top: 30px;
+  display: flex;
+}
+.social div {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 3px;
+  padding: 5px 10px 10px 5px;
+  color: #707477;
+  text-align: center;
+}
+
+.social i {
+  margin-right: 4px;
+}
+
+span {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.signup-btn {
+  margin-left: 4px;
+  color: #fb889c;
+  background: none;
+  border: none;
+}

@@ -1,0 +1,270 @@
+<app-header title="Offers"></app-header>
+
+<div class="conatiner">
+  <table>
+    <thead>
+      <tr>
+        <th>Offer Name</th>
+        <th>Offer Usage period</th>
+        <th>Offer Usage period</th>
+        <th>Minimum amount</th>
+        <th>DMaximum discount</th>
+        <th>OfferCode</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tr>
+      <td><b>FLAT 1000 OFF</b></td>
+      <td>Finite</td>
+      <td>Rings</td>
+      <td>₹ 10000</td>
+      <td style="color: rgb(1, 131, 3); font-weight: 600">₹ 300</td>
+      <td><b>RBYD29744ATG</b></td>
+      <td>
+        <button class="delete">
+          <i class="fa-solid fa-trash"></i>
+          delete
+        </button>
+
+        <button class="edit">
+          <i class="ri-edit-fill"></i>
+          Edit
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td><b>FLAT 1000 OFF</b></td>
+      <td>Finite</td>
+      <td>Rings</td>
+      <td>₹ 10000</td>
+      <td style="color: rgb(239, 39, 39); font-weight: 600">₹ 300</td>
+      <td><b>RBYD29744ATG</b></td>
+      <td>
+        <button class="delete">
+          <i class="fa-solid fa-trash"></i>
+          delete
+        </button>
+
+        <button class="edit">
+          <i class="ri-edit-fill"></i>
+          Edit
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td><b>FLAT 1000 OFF</b></td>
+      <td>Finite</td>
+      <td>Rings</td>
+      <td>₹ 10000</td>
+      <td style="color: rgb(1, 131, 3)">₹ 300</td>
+      <td><b>RBYD29744ATG</b></td>
+      <td>
+        <button class="delete">
+          <i class="fa-solid fa-trash"></i>
+          delete
+        </button>
+
+        <button class="edit">
+          <i class="ri-edit-fill"></i>
+          Edit
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td><b>FLAT 1000 OFF</b></td>
+      <td>Finite</td>
+      <td>Rings</td>
+      <td>₹ 10000</td>
+      <td style="color: rgb(1, 131, 3); font-weight: 600">₹ 300</td>
+      <td><b>RBYD29744ATG</b></td>
+      <td>
+        <button class="delete">
+          <i class="fa-solid fa-trash"></i>
+          delete
+        </button>
+
+        <button class="edit">
+          <i class="ri-edit-fill"></i>
+          Edit
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
+<button class="filter" uk-toggle="target: #add-offers-modal">
+  Add Product <i class="ri-add-line"></i>
+</button>
+<div id="add-offers-modal" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+    <div class="modal_header">
+      <h2>Create your offer here</h2>
+      <i class="ri-close-circle-line" uk-toggle="target: #add-offers-modal"></i>
+    </div>
+
+    <mat-stepper>
+      <mat-step>
+        <ng-template matStepLabel></ng-template>
+        <b style="font-size: 1.3rem; margin: 1rem 0">Fill Details</b>
+        <div class="form-box">
+          <label for="plan-name-input"> Offer Name</label>
+          <input type="text" id="plan-name-input" class="number" />
+        </div>
+
+        <div class="form-box">
+          <label for="plan-name-input"> Offer Type</label>
+          <div class="buttons">
+            <button class="select">FLAT CUT</button>
+            <button class="">PERCENT CUT</button>
+          </div>
+        </div>
+        <div class="form-box">
+          <label for="plan-name-input">Offer Usage Period</label>
+          <div class="buttons">
+            <button class="">SINGLE TIME</button>
+            <button class="">FINITE TIME</button>
+            <button class="">INFINITE TIME</button>
+          </div>
+        </div>
+
+        <div class="form-box">
+          <label for="plan-name-input">Offer Cost </label>
+          <input type="text" id="plan-name-input" class="number" />
+        </div>
+
+        <div class="buttons">
+          <button id="submit-button" matStepperNext>
+            Next <i class="fa-solid fa-angle-right"></i>
+          </button>
+        </div>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel></ng-template>
+
+        <div class="form-box">
+          <label for="plan-name-input"> Offer Code </label>
+          <input type="text" id="plan-name-input" class="number" />
+        </div>
+        <div class="form-box">
+          <label for="plan-name-input"> Maximum price in INR</label>
+          <input type="number" id="plan-name-input" class="number" />
+        </div>
+
+        <div class="form-box">
+          <label for="plan-name-input"> Minimum Products</label>
+          <input type="number" id="plan-name-input" class="number" />
+        </div>
+        <div class="form-box">
+          <label for="plan-name-input"> Maximum Discount</label>
+          <input type="number" id="plan-name-input" class="number" />
+        </div>
+        <div class="form-box">
+          <label for="plan-name-input">Minimum Products</label>
+          <select name="" id="">
+            <option value="">Earings</option>
+            <option value="">Ring</option>
+          </select>
+        </div>
+        <div class="buttons">
+          <button matStepperPrevious>
+            <i class="fa-solid fa-angle-left" style="margin-right: 0.3rem"> </i
+            >Back
+          </button>
+          <button id="submit-button" matStepperNext>Add +</button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </div>
+</div>
+<div id="mobile_offers">
+  <div class="offer_card">
+    <h4>Offer Name: <b>FLAT ₹ 1000 OFF</b></h4>
+    <h4>Offer Usage Period: <b> Finite</b></h4>
+    <h4>Product Category: <b>Rings </b></h4>
+    <h4>Minimum Amount: <b style="color: rgb(100, 195, 100)">₹ 10000</b></h4>
+    <h4>Maximum Discount: <b>...</b></h4>
+    <h4>OfferCode: <b>RBYD29744ATG</b></h4>
+    <div class="card_buttons">
+      <button class="delete">
+        <i class="fa-solid fa-trash"></i>
+        delete
+      </button>
+      <button class="edit" style="background-color: #6b6b6b">
+        <i class="ri-edit-fill"></i>
+        Edit
+      </button>
+    </div>
+  </div>
+  <div class="offer_card">
+    <h4>Offer Name: <b>FLAT ₹ 1000 OFF</b></h4>
+    <h4>Offer Usage Period: <b> Finite</b></h4>
+    <h4>Product Category: <b>Rings </b></h4>
+    <h4>Minimum Amount: <b style="color: rgb(100, 195, 100)">₹ 10000</b></h4>
+    <h4>Maximum Discount: <b>...</b></h4>
+    <h4>OfferCode: <b>RBYD29744ATG</b></h4>
+    <div class="card_buttons">
+      <button class="delete">
+        <i class="fa-solid fa-trash"></i>
+        delete
+      </button>
+      <button class="edit" style="background-color: #6b6b6b">
+        <i class="ri-edit-fill"></i>
+        Edit
+      </button>
+    </div>
+  </div>
+  <div class="offer_card">
+    <h4>Offer Name: <b>FLAT ₹ 1000 OFF</b></h4>
+    <h4>Offer Usage Period: <b> Finite</b></h4>
+    <h4>Product Category: <b>Rings </b></h4>
+    <h4>Minimum Amount: <b style="color: rgb(100, 195, 100)">₹ 10000</b></h4>
+    <h4>Maximum Discount: <b>...</b></h4>
+    <h4>OfferCode: <b>RBYD29744ATG</b></h4>
+    <div class="card_buttons">
+      <button class="delete">
+        <i class="fa-solid fa-trash"></i>
+        delete
+      </button>
+      <button class="edit" style="background-color: #6b6b6b">
+        <i class="ri-edit-fill"></i>
+        Edit
+      </button>
+    </div>
+  </div>
+  <div class="offer_card">
+    <h4>Offer Name: <b>FLAT ₹ 1000 OFF</b></h4>
+    <h4>Offer Usage Period: <b> Finite</b></h4>
+    <h4>Product Category: <b>Rings </b></h4>
+    <h4>Minimum Amount: <b style="color: rgb(100, 195, 100)">₹ 10000</b></h4>
+    <h4>Maximum Discount: <b>...</b></h4>
+    <h4>OfferCode: <b>RBYD29744ATG</b></h4>
+    <div class="card_buttons">
+      <button class="delete">
+        <i class="fa-solid fa-trash"></i>
+        delete
+      </button>
+      <button class="edit" style="background-color: #6b6b6b">
+        <i class="ri-edit-fill"></i>
+        Edit
+      </button>
+    </div>
+  </div>
+  <div class="offer_card">
+    <h4>Offer Name: <b>FLAT ₹ 1000 OFF</b></h4>
+    <h4>Offer Usage Period: <b> Finite</b></h4>
+    <h4>Product Category: <b>Rings </b></h4>
+    <h4>Minimum Amount: <b style="color: rgb(100, 195, 100)">₹ 10000</b></h4>
+    <h4>Maximum Discount: <b>...</b></h4>
+    <h4>OfferCode: <b>RBYD29744ATG</b></h4>
+    <div class="card_buttons">
+      <button class="delete">
+        <i class="fa-solid fa-trash"></i>
+        delete
+      </button>
+      <button class="edit" style="background-color: #6b6b6b">
+        <i class="ri-edit-fill"></i>
+        Edit
+      </button>
+    </div>
+  </div>
+</div>

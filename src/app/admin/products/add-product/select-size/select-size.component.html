@@ -1,0 +1,17 @@
+<section>
+    <h1>Select Size</h1>
+    <hr>
+    <div class="sizes">
+        <ol>
+            <h2>{{selectedJewllerySize.name}}</h2>
+            <mat-checkbox (change)="setSizes(selectedJewllerySize.sizes,$event)" #masterCheck>Select All</mat-checkbox>
+            <li *ngFor="let size of selectedJewllerySize.sizes">
+                <mat-checkbox (change)="setSize(size,$event)" [checked]="masterCheck.checked" value="{{size}}">{{size.size}}</mat-checkbox>
+            </li>
+        </ol>
+    </div>
+    <div class="actions">
+        <button mat-stroked-button color="primary" (click)="dialogRef.close()">Cancel</button>
+        <button mat-flat-button color="primary" (click)="this.dialogRef.close(this.selectedJewllerySize)">Save</button>
+    </div>
+</section>

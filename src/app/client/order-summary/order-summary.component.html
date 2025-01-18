@@ -1,0 +1,90 @@
+
+
+
+  <div class="cartBox">
+  <p id="heading">Order Summary</p>
+
+  <hr id="hr">
+
+  <div class="bill">
+      <div class="uk-flex subtotal">
+          <p class="billItems">Subtotal</p>
+          <p class="billItems">{{subtotal}}</p>
+      </div>
+      <div class="uk-flex">
+          <p class="billItems">Discount</p>
+          <p class="billItems">-{{discount}}</p>
+      </div>
+      <div class="uk-flex">
+          <p class="billItems">{{material}}</p>
+          <p class="billItems">{{material_Price}}</p>
+      </div>
+      <div class="uk-flex">
+          <p class="billItems">GST</p>
+          <p class="billItems">{{gst}}</p>
+      </div>
+      <div class="uk-flex">
+          <p class="billItems">Tax</p>
+          <p class="billItems">{{tax}}</p>
+      </div>
+      <div class="uk-flex">
+          <p class="billItems">Delivery</p>
+          <p class="billItems">{{delivery}}</p>
+      </div>
+      <hr id="hr" class="hrDash">
+      <div class="uk-flex subtotal">
+          <p class="totalBillAmount">Total</p>
+          <p class="totalBillAmount">{{total}}</p>
+      </div>
+      <button class="primary-button" class="payNowBtn" routerLink="../payment-options">
+        Use this Address
+      </button>
+  </div>
+</div>
+
+
+<div class="mobile-view">
+  <div class="mobile-bill">
+      <div class="uk-flex heading">
+          <p>Order Summary</p>
+          <p>{{delivery_Date}}</p>
+      </div>
+      <hr>
+      <div class="bill-info">
+          <div class="uk-flex">
+              <p>Subtotal</p>
+              <p>{{subtotal}}</p>
+          </div>
+          <div class="uk-flex">
+              <p>You saved</p>
+              <p>{{saved}}</p>
+          </div>
+          <div class="uk-flex">
+              <p>Discount Coupon</p>
+              <p>{{discount}}</p>
+          </div>
+          <div class="uk-flex">
+              <p>Gold</p>
+              <p>{{material_Price}}</p>
+          </div>
+          <div class="uk-flex">
+              <p>GST</p>
+              <p>{{gst}}</p>
+          </div>
+          <div class="uk-flex">
+              <p>Tax</p>
+              <p>{{tax}}</p>
+          </div>
+          <div class="uk-flex">
+              <p>Delivery</p>
+              <p>{{delivery}}</p>
+          </div>
+          <hr>
+          <div class="uk-flex" id="mart">
+              <p>Amount Payable</p>
+              <p>{{total}}</p>
+          </div>
+
+      </div>
+  </div>
+</div>

@@ -1,0 +1,170 @@
+<div class="container">
+    <div class="header">
+        <div class="para">
+            <p id="heading">Wallet</p>
+        </div>
+        <div class="uk-margin">
+            <form class="uk-search uk-search-default">
+                <span class="uk-search-icon-flip" uk-search-icon></span>
+                <input class="uk-search-input" type="search" placeholder="Search">
+            </form>
+            <i class="fa-solid fa-bell" id="bell"></i>
+        </div>
+    </div>
+    <div class="boxes">
+        <div class="scores">
+            <div class="points">
+                <p class="numbers">{{balance}}</p>
+                <p>Total Wallet Balance</p>
+            </div>
+        </div>
+        <div class="scores">
+            <div class="points">
+                <p class="numbers">{{user}}<br></p>
+                <p>Total User</p>
+            </div>
+        </div>
+    </div>
+    <div class="table">
+        <table>
+            <tr>
+              <th width = "20%">Name</th>
+              <th width = "20%">Email ID</th>
+              <th width = "15%">Wallet <br> Balance</th>
+              <th width = "15%">Member<br>Since</th>
+              <th width = "15%">Mobile No.</th>
+              <th width = "10%">Action</th>
+            </tr>
+            <tr *ngFor="let item of items">
+              <td>
+                <div class="product">
+                    <img src="assets/11.jpg" alt="">
+                    <div class="info">
+                        <p class="product-heading">{{name}}</p>
+                    </div>
+                </div>
+              </td>
+              <td>
+                <p class="email">{{email}}</p>
+              </td>
+              <td>
+                <div class="material">
+                    <p>{{wallet_Balance}}</p>
+                </div>
+              </td>
+              <td>
+                <div class="material quanity">
+                    <p>{{member_Since}}</p>
+                </div>
+              </td>
+              <td class="price">{{contact}}</td>
+              <td>button</td>
+            </tr>
+          </table>    
+    </div>
+</div>
+
+      <!-- .........mobile vieww......... -->
+
+<div class="mobile-container">
+    <!-- <div class="m-btn">
+        <button class="n-btn">Normal User</button>
+        <button class="tpluso-btn">10+1 User</button>
+    </div> -->
+
+    <div class="sec2">
+        <div class="m-box">
+        <div class="m-scores">
+            <div class="m-points">
+                <p class="m-numbers">{{balance}}</p>
+                <p>Total Wallet Balance</p>
+            </div>
+        </div>
+    </div>
+        <div class="m-box">
+            <div class="m-scores">
+                <div class="m-points">
+                    <p class="m-numbers">{{user}}<br></p>
+                    <p>Total User</p>
+                </div>
+            </div>
+    </div>
+
+    </div>
+    <div class="sec3">
+
+        <div class="d-container">
+            <div class="row1">
+                <img class="dp" src="/assets/Ellipse 135.jpg" alt="">
+                <div class="rp1">
+                    <p class="m-name">Arun Arora</p>
+                    <p class="m-mail">arunarora1025@gmail.com</p>
+                </div>
+                <div class="mob-txt">
+                <p class="m-wtxt">Wallet :<span class="m-txt">80000</span></p>
+            </div>
+            </div>
+            <p class="txt1">No. of Purchase: <span class="txt2">698</span></p>
+            <p class="txt1" style="margin-top: 15px ;">Member since :<span> July,2020</span></p>
+            <div class="row2">
+            <p class="txt1">Mobile No. :<span>+9856558852 </span></p>
+             <button (click)="viewhistory()">View History</button> 
+            
+        </div>
+    </div>
+        
+    </div>
+    <div class="sec3">
+
+        <div class="d-container">
+            <div class="row1">
+                <img class="dp" src="/assets/Ellipse 135.jpg" alt="">
+                <div class="rp1">
+                    <p class="m-name">Arun Arora</p>
+                    <p class="m-mail">arunarora1025@gmail.com</p>
+                </div>
+                <div class="mob-txt">
+                <p class="m-wtxt">Wallet :<span class="m-txt">80000</span></p>
+            </div>
+            </div>
+            <p class="txt1">No. of Purchase: <span class="txt2">698</span></p>
+            <p class="txt1" style="margin-top: 15px ;">Member since :<span> July,2020</span></p>
+            <div class="row2">
+            <p class="txt1">Mobile No. :<span>+9856558852 </span></p>
+            <button>View History</button>
+        </div>
+    </div>
+        
+    </div>
+    <div class="sec3">
+
+        <div class="d-container">
+            <div class="row1">
+                <img class="dp" src="/assets/Ellipse 135.jpg" alt="">
+                <div class="rp1">
+                    <p class="m-name">Arun Arora</p>
+                    <p class="m-mail">arunarora1025@gmail.com</p>
+                </div>
+                <div class="mob-txt">
+                <p class="m-wtxt">Wallet :<span class="m-txt">80000</span></p>
+            </div>
+            </div>
+            <p class="txt1">No. of Purchase: <span class="txt2">698</span></p>
+            <p class="txt1" style="margin-top: 15px ;">Member since :<span> July,2020</span></p>
+            <div class="row2">
+            <p class="txt1">Mobile No. :<span>+9856558852 </span></p>
+            <button>View History</button>
+        </div>
+    </div>
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

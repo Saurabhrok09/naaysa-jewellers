@@ -1,0 +1,28 @@
+.payment-item{
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    width: 90%;
+    margin-bottom: 20px;
+    border: 1px solid rgb(225, 225, 225);
+    box-shadow: 0 0 10px var(--color-secondary);
+}
+
+img{
+    margin:4px;
+    margin-left: 20px;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+p{
+    font-weight: 500;
+    margin:auto;
+    text-align: center;
+}
+@media only screen and (max-width: 600px){
+    .payment-item{
+        width:100%;
+    } 
+}

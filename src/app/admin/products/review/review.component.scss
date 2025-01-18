@@ -1,0 +1,96 @@
+.container{
+    #heading{
+        color: var(--color-secondary-dark);
+        font-size: var(--medium);
+        font-weight: 500; 
+    }
+    .uk-margin{
+        display: flex;
+        align-items: center;
+        span{
+            color: var(--color-secondary-darker);
+        }
+        input{
+            border: 2px solid var(--color-secondary-darker);
+            border-radius: 10px;
+            color: var(--color-secondary-darker);
+        }
+        #bell{
+            font-size: var(--medium);
+            color: var(--color-secondary-darker);
+            margin-left: 25px;
+            cursor: pointer;
+        }
+    }
+    .parent-container{
+        display: flex;
+        justify-content: space-between;
+        .reviews{
+            background-color: #FFD5DC;
+            margin: 10px;
+            border-radius: 10px;
+            padding: 10px;
+            width: 70%;
+        }
+        .customer-review-chart{
+            border: 2px solid var(--color-secondary-darker);
+            width: 25%;
+            padding: 15px 20px;
+            padding-top: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+            border-radius: 15px;
+            margin-top: 7px;
+            #heading{
+                font-weight: 500;
+                font-size: var(--msmall);
+            }
+            i{
+                color: var(--color-secondary-darker);
+                margin-left: 5px;
+            }
+            #bottom{
+                margin-bottom: 15px;
+                font-size: var(--xxsmall);
+            }
+            .progress-bars{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: -10px;
+                p{
+                    font-size: var(--xsmall);
+                    font-weight: 500;
+                }
+                .progress{
+                    width: 60%;
+                }
+            }
+            .quality{
+                display: flex;
+                margin-top: 15px;
+                justify-content: space-between;
+                align-items: center;
+                p{
+                    font-size: var(--xxsmall);
+                    font-weight: 500;
+                }
+                .stars{
+                    i{
+                        margin-right: 3px0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.uk-progress::-webkit-progress-value {
+    background-color: var(--color-secondary-darker) ;
+  }
+  .uk-progress::-moz-progress-bar {
+    background-color: var(--color-secondary-darker) ;
+  }
+  .uk-progress::-ms-fill {
+    background-color: var(--color-secondary-darker) ;
+  }

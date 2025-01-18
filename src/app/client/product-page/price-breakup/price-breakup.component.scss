@@ -1,0 +1,384 @@
+// Pric breakup and Description section code
+.itemDescriptionBox1 {
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+  padding-right: 0px !important;
+  padding: 25px;
+}
+
+.itemDescription {
+  width: 95vw;
+  margin: 0 auto;
+}
+
+.itemDescriptionGrid {
+  display: grid;
+  grid-template-columns: 0.6fr 0.4fr;
+  grid-gap: 12px
+}
+
+.descriptionText2 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32px;
+  text-transform: capitalize;
+  color: #66323C;
+  margin-left: 65px;
+}
+
+.availableItems {
+  display: flex;
+  column-gap: 10px;
+  margin-left: 65px;
+}
+
+.availableItems img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+section.priceBreakUp {
+  width: 95vw;
+  margin: 0 auto;
+  margin-top: 30px;
+  border-radius: 10px;
+  border: 1px solid #e68d9d;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+
+  .head {
+    background-color: #e68d9d;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+
+    h2 {
+      color: white;
+      margin: 0px;
+      font-size: 22px;
+      // text-transform: uppercase;
+    }
+
+    p {
+      cursor: pointer;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 28px;
+      display: flex;
+      column-gap: 12px;
+      align-items: center;
+      text-align: center;
+      text-transform: uppercase;
+
+      color: #FFFFFF;
+    }
+
+  }
+}
+
+.priceBreakUp table tr th {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 30px;
+  // text-align: center;
+  color: #E88F9F;
+}
+
+.bottomBorder {
+  border-bottom: 1.5px solid #E9E9E9;
+  margin-bottom: 30px;
+}
+
+.pinkSubText {
+  padding: 16px 12px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+  // text-align: center;
+  letter-spacing: 0.03em;
+  color: #E88F9F;
+}
+
+small.mrp {
+  font-family: 'Roboto';
+  font-style: normal;
+  // font-weight: 500;
+  // font-size: 20px;
+  line-height: 23px;
+  // text-align: center;
+  color: #5C5E62;
+  text-decoration: none;
+}
+
+.priceTable {
+  padding: 49px;
+  padding-right: 0px;
+}
+
+.smallText {
+  text-decoration: line-through;
+}
+
+.priceBreakUp table tr td {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: #5C5E62;
+}
+
+.uk-tab {
+  justify-content: center;
+}
+
+.uk-tab::before {
+  border: none !important;
+}
+
+.uk-tab li a {
+  text-align: center;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 33px;
+  text-transform: capitalize;
+  color: #66323C;
+}
+
+.uk-tab>.uk-active>a {
+  color: #66323C;
+  border-color: #66323C;
+}
+
+.descriptionText1 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #66323C;
+  padding-inline: 50px;
+}
+
+.productDetail {
+  display: grid;
+  grid-template-columns: 0.33fr 0.33fr 0.33fr;
+  grid-gap: 12px
+}
+
+.subHeading {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  color: #E88F9F;
+}
+
+.subText {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: #5C5E62;
+}
+
+.productDetail>div {
+  padding: 12px;
+  border: 1.5px solid #c9c9c9;
+  border-radius: 10px;
+  text-align: center;
+
+  h3 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    color: #E88F9F;
+  }
+
+  h5 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: #5C5E62;
+  }
+
+}
+
+.badges {
+  display: flex;
+  gap: 30px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.badgesImg {
+  width: 25px;
+}
+
+.imageGroup {
+  display: flex;
+  column-gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageGroup1 {
+  width: 148px;
+  height: 218px;
+}
+
+.imageGroup2 {
+  width: 260px;
+  height: 400px;
+}
+
+.detailImg {
+  width: 50px;
+}
+
+.detailBox {
+  height: 400px;
+  overflow: auto;
+}
+
+.detailBox::-webkit-scrollbar {
+  display: none;
+}
+
+.diamondGermsBox {
+  margin-top: 10px;
+  display: flex;
+  column-gap: 20px;
+
+  h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    color: #E88F9F;
+  }
+}
+
+.diamondImg {
+  width: 60px;
+}
+
+.diamondSection {
+  margin-top: 15px;
+  border-radius: 10px;
+  border: 1px solid #c9c9c9;
+  padding: 24px;
+  padding-right: 0px;
+}
+
+.tableHeading {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color: #5C5E62;
+}
+
+.tableSubText {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #5C5E62;
+}
+
+@media (max-width:1300px) {
+  .itemDescriptionGrid {
+    grid-gap: 20px;
+  }
+
+  .descriptionText1 {
+    font-size: 18px;
+  }
+
+  .uk-tab li a {
+    font-size: 24px;
+  }
+
+  .subText {
+    font-size: 18px;
+  }
+
+  .productDetail>div {
+    h3 {
+      font-size: 20px;
+    }
+
+    h5 {
+      font-size: 18px;
+    }
+  }
+
+  .tableHeading {
+    font-size: 18px;
+  }
+
+  .tableSubText {
+    font-size: 16px;
+  }
+}
+
+@media (max-width:1024px) {
+  .itemDescriptionGrid {
+    grid-gap: 40px;
+  }
+
+  .descriptionText1 {
+    font-size: 16px;
+  }
+
+  .uk-tab li a {
+    font-size: 20px;
+  }
+
+  .subText {
+    font-size: 16px;
+  }
+
+  .productDetail>div {
+    h3 {
+      font-size: 18px
+    }
+
+    h5 {
+      font-size: 16px;
+    }
+  }
+
+  .tableHeading {
+    font-size: 16px;
+  }
+
+  .tableSubText {
+    font-size: 14px;
+  }
+}

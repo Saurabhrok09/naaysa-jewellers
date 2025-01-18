@@ -1,0 +1,142 @@
+
+<div class="cart-main">
+    <div class="cart-items">
+      <div class="selectOptionBox">
+        <h1 class="selectOption">Select</h1>
+        <p class="selectOptionText">(Payment Method)</p></div>
+           <hr class="aa">
+        <div class="payment-types">
+          <app-payment-type paymentType="Wallet" discount="Pay from wallet ₹10,000"></app-payment-type>
+          <app-payment-type paymentType="Pay From Bank" discount="Pay from wallet ₹12,000"></app-payment-type>
+        </div>
+</div>
+    <div class="cart-price ">
+      <div class="walletBox">
+        <div>
+          <p class="walletText">
+            <img src="../../../assets/CART/wallet-3.svg" class="deliveryImg" alt="" srcset="">
+            Wallet</p>
+
+        </div>
+        <div class="availableBalance">
+          <p class="availableBalanceText">Available Balance</p>
+          <p class="availableBalanceAmount">₹ 23,000</p>
+        </div></div>
+
+        <div class="cartBox">
+        <p id="heading">Order Summary</p>
+
+        <hr id="hr">
+
+        <div class="bill">
+            <div class="uk-flex subtotal">
+                <p class="billItems">Subtotal</p>
+                <p class="billItems">{{subtotal}}</p>
+            </div>
+            <div class="uk-flex">
+                <p class="billItems">Discount</p>
+                <p class="billItems">-{{discount}}</p>
+            </div>
+            <div class="uk-flex">
+                <p class="billItems">{{material}}</p>
+                <p class="billItems">{{material_Price}}</p>
+            </div>
+            <div class="uk-flex">
+                <p class="billItems">GST</p>
+                <p class="billItems">{{gst}}</p>
+            </div>
+            <div class="uk-flex">
+                <p class="billItems">Tax</p>
+                <p class="billItems">{{tax}}</p>
+            </div>
+            <div class="uk-flex">
+                <p class="billItems">Delivery</p>
+                <p class="billItems">{{delivery}}</p>
+            </div>
+            <hr id="hr" class="hrDash">
+            <div class="uk-flex subtotal">
+                <p class="totalBillAmount">Total</p>
+                <p class="totalBillAmount">{{total}}</p>
+            </div>
+            <button class="primary-button" class="payNowBtn"  (click)="onclicked()">
+              Pay now
+            </button>
+        </div>
+      </div>
+    </div>
+
+   
+
+    <div class="mobile-view">
+        <div class="mobile-bill">
+            <div class="uk-flex heading">
+                <p>Order Summary</p>
+                <p>{{delivery_Date}}</p>
+            </div>
+            <hr>
+            <div class="bill-info">
+                <div class="uk-flex">
+                    <p>Subtotal</p>
+                    <p>{{subtotal}}</p>
+                </div>
+                <div class="uk-flex">
+                    <p>You saved</p>
+                    <p>{{saved}}</p>
+                </div>
+                <div class="uk-flex">
+                    <p>Discount Coupon</p>
+                    <p>{{discount}}</p>
+                </div>
+                <div class="uk-flex">
+                    <p>Gold</p>
+                    <p>{{material_Price}}</p>
+                </div>
+                <div class="uk-flex">
+                    <p>GST</p>
+                    <p>{{gst}}</p>
+                </div>
+                <div class="uk-flex">
+                    <p>Tax</p>
+                    <p>{{tax}}</p>
+                </div>
+                <div class="uk-flex">
+                    <p>Delivery</p>
+                    <p>{{delivery}}</p>
+                </div>
+                <hr>
+                <div class="uk-flex" id="mart">
+                    <p>Amount Payable</p>
+                    <p>{{total}}</p>
+                </div>
+
+            </div>
+        </div>
+        <button class="place" (click)="onclick()">
+            Pay {{total}}
+        </button>
+    </div>
+</div>
+
+
+<div *ngIf="pop" style="width: 100%; height: 100%;background-color: rgba(0, 0, 0, 0.4);position: fixed;top:0px" >
+<div  id="popup">
+    <img src="../../../assets/CART/Vector.svg">
+    <p>Waiting for confirmation</p>
+    <div style="display: flex;justify-content: center;text-align: center;" >
+        <button class="buttonn" (click)="home()">Back to Home</button>
+        <button class="buttonn" routerLink="../cart">My Orders</button>
+    </div>
+</div>
+</div>
+
+
+<div *ngIf="popp" style="width: 100%; height: 100%;background-color: rgba(0, 0, 0, 0.4);position: fixed;top:0px" >
+    <div  id="popup">
+        <img src="../../../assets/CART/Group 10208.svg">
+        <p>Your Order has been placed successfully!</p>
+        <div style="display: flex;justify-content: center;text-align: center;" >
+            <button class="buttonn" (click)="home()">Back to Home</button>
+            <button class="buttonn" routerLink="../cart">My Orders</button>
+        </div>
+    </div>
+    </div>

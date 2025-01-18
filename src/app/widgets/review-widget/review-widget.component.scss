@@ -1,0 +1,72 @@
+.container{
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    border-bottom: 1px solid var(--color-secondary-darker);
+    .parent-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .left-side{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .images{
+                text-align: right;
+                display: inline-block;
+                width: 40%;
+                img{
+                    width: 15%;
+                    height: auto;
+                    margin-right: 15px;
+                }
+            }
+            .img-and-name{
+                display: flex;
+                flex-direction: column;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                .pic-and-review{
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 15px;
+                }
+                .reviews{
+                    p{
+                        margin: 0;
+                        font-size: var(--xxsmall);
+                    }
+                }
+                #name{
+                    font-weight: 500;
+                    font-size: var(--msmall);
+                }
+                i{
+                    color: var(--color-secondary-darker);
+                }
+                img{
+                    width: 85px;
+                    height: 85px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    margin-right: 15px;
+                }
+                .like{
+                    display: flex;
+                    align-items: center;
+                    margin-top: 0.5rem;
+                    i{
+                        margin-right: 05px;
+                        margin-left: 5px;
+                    }
+                    p{
+                        margin: 0;
+                        margin-right: 3px;
+
+                    }
+                }
+
+            }
+        }
+    }
+}

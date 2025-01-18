@@ -1,0 +1,165 @@
+
+.payment-mode {
+  display: flex;
+  justify-content: start;
+  column-gap: 12px;
+  margin: 15px;
+  padding: 0px 10px;
+  margin-bottom: 10px;
+  width: auto;
+height: 183px;
+  align-items: center;
+  border: 1px solid rgb(225, 225, 225);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  border-radius: 14.75px;
+
+  &:hover {
+    background: #FFFFFF;
+  border: 2px solid #E88F9F;
+    border: 2px solid var(--color-primary);
+    transform: scale(1.02);
+    transition: 0.5s;
+    box-shadow: 0 0 20px rgba(246, 174, 220, 0.608);
+  }
+
+}
+input[type="radio"]:checked~ *{
+  .payment-mode{
+
+    background: #FFFFFF;
+  border: 2px solid #E88F9F!important;
+  }
+}
+.pinkImgBack{
+  background: #E88F9F;
+  box-shadow: 0px 3.6875px 14.75px rgba(22, 22, 22, 0.1);
+  border-radius: 12px;
+  width: 52px;
+  height: 52px;
+  text-align: center;
+  margin-top: -100px;
+  img{
+    width: 30px;
+    height: 52px;
+  }
+}
+.walletBox{
+  background: #FFDBE2;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 12px;
+}
+.walletBoxtext{
+  font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #BB6878;
+    padding: 10px;
+}
+.payment-mode p {
+  margin: 0;
+  padding: 15px;
+  // font-size: var(--small);s
+  font-weight: 500;
+  // width: 85%;
+  font-family: 'Roboto';
+font-style: normal;
+font-size: 23px;
+line-height: 27px;
+color: #444444;
+}
+.payment-mode small{
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+
+color: #666666;
+}
+input[type="radio"] {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.7em;
+  height: 1.7em;
+  border: 0.1em solid currentColor;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+input:checked {
+  background-color: var(--color-secondary);
+  outline-offset: max(1px, 0.15em);
+  border: none;
+}
+@media (max-width:1300px) {
+  .payment-mode p {
+  font-size: 20px;
+  }
+  .payment-mode small{
+  font-size: 18px;
+  }
+  input[type="radio"] {
+    margin-bottom: 10px;
+  }
+  .walletBox{
+    margin-top: 20px;
+    padding: 8px;
+  }
+  .walletBoxtext{
+      font-size: 14px;
+      padding: 4px;
+  }
+  .pinkImgBack{
+    width: 35px;
+    height: 35px;
+    img{
+      width: 25px;
+      height: 30px;
+    }
+  }
+}
+@media (max-width:1025px) {
+  .payment-mode p {
+    font-size: 18px;
+    }
+    .payment-mode small{
+    font-size: 16px;
+    }
+  input[type="radio"] {
+    margin-bottom: 18px;
+  }
+  .walletBox{
+    margin-top: 8px;
+    padding: 6px;
+  }
+  .walletBoxtext{
+      font-size: 12px;
+      padding: 2px;
+  }
+  .pinkImgBack{
+    width: 30px;
+    height: 22px;
+    img{
+      width: 15px;
+      height: 20px;
+    }
+  }
+}
+@media only screen and (max-width: 600px){
+  .payment-mode{
+    width: 95%;
+    height: 70px;
+  }
+  .payment-mode p {
+    font-size: var(--xsmall);
+  }
+  input[type="radio"]{
+    width: 1.2em;
+    height: 1.2em;
+  }
+}

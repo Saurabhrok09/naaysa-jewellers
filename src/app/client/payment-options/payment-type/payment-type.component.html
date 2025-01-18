@@ -1,0 +1,28 @@
+<div class="payment-mode" >
+
+  <input type="radio" name="pay-mode" (click)="showDiscount()">
+    <div>
+        <p>{{paymentType}}</p>
+     <small>{{discount}}</small>
+     <div class="uk-flex walletBox" *ngIf="!hidden">
+      <img src="../../../../assets/CART/Group.svg" alt="">
+      <div class="walletBoxtext">₹2000 off on Paying From Wallet</div>
+     </div>
+    </div>
+    <div class="pinkImgBack" *ngIf="!hidden"><img src="../../../../assets/CART/add koney.svg" alt=""></div>
+
+</div>
+<!-- <div class="paymentBox">
+  <div class="pinkImgBack"><img src="../../../../assets/CART/add koney.svg" alt=""></div>
+  <div class="payment-mode" >
+    <input type="radio" name="pay-mode" (click)="showDiscount()">
+      <div>
+          <p>{{paymentType}}</p>
+       <small>{{discount}}</small>
+       <div class="uk-flex walletBox" *ngIf="!hidden">
+        <img src="../../../../assets/CART/Group.svg" alt="">
+        <div class="walletBoxtext">₹2000 off on Paying From Wallet</div>
+       </div>
+      </div>
+  </div>
+</div> -->

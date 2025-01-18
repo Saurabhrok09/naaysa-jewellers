@@ -1,0 +1,10 @@
+::ng-deep *:not(i) {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-one);
+}
+@media only screen and (max-width: 600px){
+  html,body{
+    background-color: #E88F9F;
+  }
+}

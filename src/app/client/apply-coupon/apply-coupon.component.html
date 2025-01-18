@@ -1,0 +1,23 @@
+<div class="container">
+    <div id="closeIcon"><img (click)="onClose()" src="assets\material-symbols_close.svg" alt="closeIcon"></div>
+    <section class="main"> 
+    <div class="inputSec">
+        <input type="text" placeholder="Enter Coupon Code" />
+        <button>Apply</button>
+    </div>
+    <div class="couponSec">
+        <div *ngFor="let item of coupons" class="couponBlock">
+            <div class="discount">{{item.maximumDiscount}}%
+                OFF
+            </div>
+            <div class="mainBlock">
+                <div class="couponName">
+                    <span id="heading">{{item.offerCode}}</span>
+                    <button>Apply</button>
+                </div>
+                <div class="couponDesc">{{item.maximumDiscount}}% off on all {{item.usage}} on all cart value upto {{item.minPrice}}</div>
+            </div>
+        </div>
+    </div>
+    </section>
+</div>

@@ -1,0 +1,32 @@
+section{
+    padding: 30px;
+    border-radius: 20px;
+    background: white;
+    max-height: 80vh;
+    overflow-y: auto;
+    button{
+        --mdc-filled-button-label-text-color:white !important;
+    }
+    .row{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .rowExtended{
+        display: grid;
+        grid-template-columns: .01fr 1fr 1fr 1fr 1fr .01fr;
+        max-width: 800px;
+    }
+    .swapped{
+        display: grid;
+        grid-template-columns: 1fr 1fr 2fr;
+        gap: 20px;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    mat-radio-group{
+        max-width:800px;
+    }
+}

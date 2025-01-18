@@ -1,0 +1,33 @@
+.container-fluid{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #969696;
+    margin: 10px;
+    .first-section{
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        i{
+            color: var(--color-secondary-darker);
+        }
+    }
+    .details{
+        margin-left: 20px;
+        p:nth-child(1){
+            font-weight: 500;
+        }
+        p:nth-child(2){
+            font-size: var(--xxsmall);
+        }
+        span{
+            font-size: var(--xxsmall);
+            opacity: 0.5;
+
+        }
+    }
+}
+i[class^="ri-"]{
+    color: var(--color-secondary-darker);
+    font-size: var(--small);
+}

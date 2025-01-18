@@ -1,0 +1,210 @@
+
+.container{
+    width: auto;
+    height: 190px;
+    padding: 24px;
+    border: 1px solid var(--color-secondary);
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px #F3C7CF;
+
+
+}
+.section-one{
+  display: grid;
+  grid-template-columns: 5fr 2fr 3fr;
+  width: 100%;
+  grid-gap:8px;
+}
+ .inputBox{
+  display: flex;
+  gap: 6px;
+}
+input[type="radio"] {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.7em;
+  height: 1.7em;
+  border: 0.1em solid currentColor;
+  border-radius: 50%;
+  text-align: right;
+  &:checked{
+    color: #F3C7CF;
+      background-color: var(--color-secondary);
+      outline: max(2px, 0.18em) solid currentColor;
+      outline-offset: max(1px, 0.15em);
+      border: none;
+      &:before{
+        font-size: 16px;
+        cursor: pointer;
+     }
+}
+}
+.addressButton{
+  background: rgba(243, 199, 207, 0.51);
+border-radius: 11.0286px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+color: #BB6878;
+width: max-content;
+height: 36px;
+padding: 5px;
+}
+.btns{
+  color: #BB6878;
+  display: flex;
+  cursor: pointer;
+}
+.editbtn{
+      font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 33px;
+  align-items: center;
+  color: #BB6878;
+  cursor: pointer;
+    }
+    .recipientAddress{
+      font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+color: #707477;
+    }
+    .Recipientname{
+      font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 28px;
+
+color: #5C5E62;
+    }
+    .recipientNumber{
+      font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+color: #707477;
+    }
+
+
+@media(max-width:1300px){
+  .section-one{
+    grid-gap:10px;
+  }
+  .addressButton{
+    font-size: 18px;
+    width: 60px;
+    height: 30px;
+  }
+  .editbtn{
+        font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 33px;
+    align-items: center;
+    color: #BB6878;
+      }
+      .recipientAddress{
+        font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: #707477;
+      }
+      .Recipientname{
+        font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+
+  color: #5C5E62;
+      }
+      .recipientNumber{
+        font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: #707477;
+      }
+
+}
+@media (max-width:1025px) {
+  .section-one{
+    grid-gap:4px;
+  }
+  .addressButton{
+    font-size: 12px;
+    width: 40px;
+    height: 30px;
+  }
+  .editbtn{
+        font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 33px;
+    align-items: center;
+    color: #BB6878;
+      }
+      .recipientAddress{
+        font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  color: #707477;
+      }
+      .Recipientname{
+        font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 28px;
+  color: #5C5E62;
+      }
+      .recipientNumber{
+        font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  color: #707477;
+      }
+      // input[type="radio"] {
+      //   appearance: none;
+      //   background-color: #fff;
+      //   margin: 0;
+      //   font: inherit;
+      //   color: currentColor;
+      //   width: 16px;
+      //   height: 16px;
+      //   border: 0.1em solid currentColor;
+      //   border-radius: 50%;
+      //   text-align: right;
+      //   margin-top: 5px;
+      //   &:checked{
+      //     color: #F3C7CF;
+      //       background-color: var(--color-secondary);
+      //       outline: max(2px, 0.18em) solid currentColor;
+      //       outline-offset: max(1px, 0.15em);
+      //       border: none;
+      //       &:before{
+      //         font-size: 16px;
+      //         cursor: pointer;
+      //      }
+      // }
+      // }
+}

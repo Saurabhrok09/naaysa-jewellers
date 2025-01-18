@@ -1,0 +1,37 @@
+.container {
+    margin: 10px;
+    margin-left: 0;
+    padding: 10px 15px;
+    width: 90%;
+    border: 2px solid var(--color-dark-primary);
+    background-color: #fff;
+    border-radius: 10px;
+
+    .parent-container {
+        display: flex;
+        align-items: center;
+    }
+
+    img {
+        max-width: 65px;
+        max-height: 65px;
+        object-fit: cover;
+    }
+
+    .details {
+        margin-left: 15px;
+        margin-top: 5px;
+
+        p:nth-child(1) {
+            font-weight: 500;
+            font-size: var(--xxsmall);
+            color: rgb(48, 48, 48);
+        }
+        .stars{
+            color: var(--color-dark-primary);
+            i{
+                margin-right: 5px;
+            }
+        }
+    }
+}

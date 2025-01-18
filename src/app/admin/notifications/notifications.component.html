@@ -1,0 +1,7 @@
+<app-header title="Notification"></app-header>
+<div class="container-fluid">
+        <div class="uk-margin">  
+            <button id="edit" (click)="editMode = !editMode">Edit <i class="ri-edit-circle-{{editMode ? 'fill' : 'line'}}"></i></button>
+        </div>
+    <app-notification-widget (selected)="value($event)" [isCheckBoxVisible]="editMode" *ngFor="let item of items"></app-notification-widget>
+</div>

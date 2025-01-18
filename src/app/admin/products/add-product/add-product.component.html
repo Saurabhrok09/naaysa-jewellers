@@ -1,0 +1,606 @@
+<section>
+  <mat-progress-bar
+    *ngIf="uploading"
+    mode="determinate"
+    [value]="uploadPercent"
+  ></mat-progress-bar>
+  <mat-stepper linear="false">
+    <mat-step
+      [stepControl]="productForm"
+      errorMessage="Basic details are missing."
+      label="Product"
+    >
+      <form [formGroup]="productForm" (ngSubmit)="basicDetailSubmit()">
+        <input
+          type="file"
+          name="images"
+          hidden
+          multiple
+          (change)="addImages($event)"
+          #imagePicker
+        />
+        <div class="images">
+          <p *ngIf="productImagesData.length == 0">Click to add images</p>
+          <div
+            class="image"
+            *ngFor="let image of productImagesData; let i = index"
+          >
+            <mat-icon (click)="removeImage(i)">close</mat-icon>
+            <img [src]="image" />
+          </div>
+          <button
+            type="button"
+            mat-flat-button
+            (click)="imagePicker.click()"
+            color="primary"
+          >
+            Add Images
+          </button>
+        </div>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input type="text" formControlName="name" matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Description</mat-label>
+          <textarea
+            type="text"
+            formControlName="description"
+            matInput
+          ></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Category</mat-label>
+          <mat-select
+            placeholder="Category"
+            formControlName="category"
+            name="category"
+          >
+            <mat-option *ngFor="let category of categories" [value]="category">
+              {{ category.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Average Rating</mat-label>
+          <mat-select
+            placeholder="Rating"
+            formControlName="averageRating"
+            name="averageRating"
+          >
+            <mat-option
+              *ngFor="let averageRating of ratings"
+              [value]="averageRating"
+            >
+              {{ averageRating }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Select Type</mat-label>
+          <mat-select placeholder="Jewellery Type" formControlName="jewelleryType" name="item" #jewelleryType>
+            <mat-option *ngFor="let item of jewelleryTypes" [value]="item">
+              {{item.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Select Size Type</mat-label>
+          <mat-select placeholder="Size Type" formControlName="jewelleryType" name="item" #sizeType>
+            <mat-option *ngFor="let item of jewelleryType.value.sizes" [value]="item">
+              {{item.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <h2>What does your product contains ?</h2>
+        <mat-form-field appearance="outline">
+          <mat-label>Select Materials</mat-label>
+          <mat-select
+            multiple
+            placeholder="Select Material"
+            formControlName="materials"
+            name="material"
+          >
+            <mat-option
+              *ngFor="let material of configMaterials"
+              [value]="material"
+            >
+              {{ material }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- <h3>Tags <button mat-flat-button color="primary" type="button" (click)="tags.push({name:''})">Tags</button></h3>
+                <ol>
+                    <li *ngFor="let color of tags; let i = index" class="row">
+                      <mat-form-field appearance="outline">
+                        <mat-label>Color Name</mat-label>
+                        <input type="text" matInput [(ngModel)]="color.name" [ngModelOptions]="{standalone:true}">
+                      </mat-form-field>
+                      <button type="button" (click)="tags.splice(0,i)" mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
+                    </li>
+                  </ol> -->
+        <div class="actions">
+          <button
+            type="button"
+            mat-stroked-button
+            (click)="cancel()"
+            color="primary"
+          >
+            Cancel
+          </button>
+          <button type="submit" mat-flat-button matStepperNext color="primary">
+            Next
+          </button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step
+      *ngIf="productForm.value.materials?.includes('Metal')"
+      label="Metals"
+    >
+      <form [formGroup]="metalForm">
+        <div class="metals">
+          <h2>For Base Material</h2>
+          <mat-form-field appearance="outline">
+            <mat-label>Choose Metal</mat-label>
+            <mat-select
+              placeholder="Metal"
+              formControlName="metal"
+              name="metal"
+              #selectedMaterial
+            >
+              <mat-option *ngFor="let metal of materials" [value]="metal">
+                {{ metal.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Choose Colors</mat-label>
+            <mat-select
+              placeholder="Choose Colors"
+              multiple
+              formControlName="color"
+              name="color"
+            >
+              <mat-option *ngFor="let color of selectedMaterial.value.colors" [value]="color">
+                {{ color.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Purity</mat-label>
+            <mat-select
+              placeholder="Choose Purity"
+              multiple
+              formControlName="purity"
+              name="color"
+              #selectedPurity
+            >
+              <mat-option *ngFor="let color of selectedMaterial.value.variants" [value]="color">
+                {{ color.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <hr/>
+          <h3>Master Variant</h3>
+          <div class="masterVariants">
+            <mat-form-field appearance="outline">
+              <mat-label>Size</mat-label>
+              <!-- <input type="text" formControlName="masterMetalSize" matInput /> -->
+              <mat-select placeholder="Select Size" formControlName="masterMetalSize" name="size">
+                <mat-option *ngFor="let size of sizeType.value.sizes" [value]="size">
+                  {{size}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Master Purity</mat-label>
+              <mat-select placeholder="Select Purity" name="purity" formControlName="masterPurity">
+                <mat-option *ngFor="let purity of selectedPurity.value" [value]="purity">
+                  {{purity.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Weight (gram)</mat-label>
+              <input type="number" (input)="setWeight()" formControlName="masterWeight" matInput #masterWeight />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Size Variation</mat-label>
+              <input type="number" formControlName="masterVariation" #variationQty matInput />
+            </mat-form-field>
+          </div>
+          <hr />
+          <button mat-flat-button color="primary" (click)="chooseSize(sizeType.value)">Choose Sizes</button>
+          <h3>
+            Product Size
+            <button
+              mat-icon-button
+              color="primary"
+              (click)="sizes.push({ name: '', weight: 0, variation: 0,type:'size' })"
+            >
+              <mat-icon>add</mat-icon>
+            </button>
+          </h3>
+          <div class="row" *ngFor="let size of sizes; let first = first">
+            <mat-form-field appearance="outline">
+              <mat-label>Size Name</mat-label>
+              <input type="text" [(ngModel)]="size.name" [ngModelOptions]="{standalone:true}" matInput />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Weight</mat-label>
+              <input [(ngModel)]="size.weight" [ngModelOptions]="{standalone:true}" [disabled]="true" type="number" matInput />
+            </mat-form-field>
+            <div class="sizeVariationField">
+              <button mat-icon-button (click)="addVariation(size,variationQty.value,masterWeight.value)">
+                <mat-icon>add</mat-icon>
+              </button>
+              <mat-form-field appearance="outline">
+                <mat-label>Variation</mat-label>
+                <input [step]="variationQty.value" [(ngModel)]="size.variation" [ngModelOptions]="{standalone:true}" type="number" matInput />
+              </mat-form-field>
+              <button (click)="subtractVariation(size,variationQty.value,masterWeight.value)" mat-icon-button matPrefix>
+                <mat-icon>remove</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <button
+        mat-flat-button
+        matStepperNext
+        (click)="generateVariants()"
+        color="primary"
+      >
+        Next
+      </button>
+    </mat-step>
+    <mat-step
+      *ngIf="productForm.value.materials?.includes('Diamond')"
+      label="Diamond"
+    >
+    <h2>
+      Diamonds
+      <button mat-mini-fab (click)="diamonds.push({name:'',type:'',quantity:0,variants:[{name:'',price:0,weight:0,type:'diamondType'}]})" color="primary">
+        <mat-icon>add</mat-icon>
+      </button>
+    </h2>
+      <div *ngFor="let diamond of diamonds;let i = index" class="diamond">
+        <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label>Diamond Name</mat-label>
+            <input [(ngModel)]="diamond.name" [ngModelOptions]="{standalone:true}" type="text" matInput />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Diamond Type</mat-label>
+            <mat-select placeholder="Selct Type" [(ngModel)]="diamond.type" [ngModelOptions]="{standalone:true}" name="diamond">
+              <mat-option *ngFor="let diamond of diamondTypes" [value]="diamond">
+                {{ diamond }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Diamond Quantity</mat-label>
+            <input [(ngModel)]="diamond.quantity" [ngModelOptions]="{standalone:true}" type="number" matInput />
+          </mat-form-field>
+        </div>
+        <h2>
+          Variants
+          <button
+            mat-mini-fab
+            color="primary"
+            (click)="diamond.variants.push({ name: '', weight: 0, price: 0,type:'diamondType' })"
+          >
+            <mat-icon>add</mat-icon>
+          </button>
+        </h2>
+        <div class="diamondVariant" *ngFor="let variant of diamond.variants">
+          <mat-form-field appearance="outline">
+            <mat-label>Diamond Name</mat-label>
+            <input type="text" matInput [(ngModel)]="variant.name" [ngModelOptions]="{standalone:true}" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Weight</mat-label>
+            <input type="number" matInput [(ngModel)]="variant.weight" [ngModelOptions]="{standalone:true}" />
+            <span matTextSuffix>Caret</span>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Price</mat-label>
+            <input type="number" matInput [(ngModel)]="variant.price" [ngModelOptions]="{standalone:true}" />
+          </mat-form-field>
+          <button mat-icon-button color="primary">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+        <div>
+          <button mat-flat-button color="primary" (click)="diamonds.splice(0,i)"> <mat-icon>delete</mat-icon> Delete Diamond</button>
+        </div>
+      </div>
+      <button
+        mat-flat-button
+        matStepperNext
+        color="primary"
+        (click)="generateVariants()"
+      >
+        Next
+      </button>
+    </mat-step>
+    <mat-step
+      *ngIf="productForm.value.materials?.includes('Stone')"
+      label="Stones"
+    >
+    <h2>
+      Stones
+      <button mat-mini-fab (click)="stones.push({name:'',type:'',quantity:0,variants:[{name:'',price:0,weight:0,type:'stoneType'}]})" color="primary">
+        <mat-icon>add</mat-icon>
+      </button>
+    </h2>
+      <div *ngFor="let diamond of stones;let i = index" class="diamond">
+        <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label>Stone Name</mat-label>
+            <input [(ngModel)]="diamond.name" [ngModelOptions]="{standalone:true}" type="text" matInput />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Stone Type</mat-label>
+            <mat-select placeholder="Selct Type" [(ngModel)]="diamond.type" [ngModelOptions]="{standalone:true}" name="diamond">
+              <mat-option *ngFor="let diamond of stoneTypes" [value]="diamond">
+                {{ diamond }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Stone Quantity</mat-label>
+            <input [(ngModel)]="diamond.quantity" [ngModelOptions]="{standalone:true}" type="number" matInput />
+          </mat-form-field>
+        </div>
+        <h2>
+          Variants
+          <button
+            mat-mini-fab
+            color="primary"
+            (click)="diamond.variants.push({ name: '', weight: 0, price: 0,type:'stoneType' })"
+          >
+            <mat-icon>add</mat-icon>
+          </button>
+        </h2>
+        <div class="diamondVariant" *ngFor="let variant of diamond.variants">
+          <mat-form-field appearance="outline">
+            <mat-label>Stone Name</mat-label>
+            <input type="text" matInput [(ngModel)]="variant.name" [ngModelOptions]="{standalone:true}" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Weight</mat-label>
+            <input type="number" matInput [(ngModel)]="variant.weight" [ngModelOptions]="{standalone:true}" />
+            <span matTextSuffix>Caret</span>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Price</mat-label>
+            <input type="number" matInput [(ngModel)]="variant.price" [ngModelOptions]="{standalone:true}" />
+          </mat-form-field>
+          <button mat-icon-button color="primary">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+        <div>
+          <button mat-flat-button color="primary" (click)="diamonds.splice(0,i)"> <mat-icon>delete</mat-icon> Delete Diamond</button>
+        </div>
+      </div>
+      <div class="actions">
+        <button mat-flat-button color="primary" matStepperNext (click)="generateVariants()">Next</button>
+      </div>
+    </mat-step>
+    <mat-step label="Pricing & Taxes">
+      <form [formGroup]="taxForm">
+        <div class="pricingAndTaxes uk-width-1-1">
+          <h1>Pricing & Taxes</h1>
+          <h2>Making Charges</h2>
+          <div class="making">
+            <mat-form-field appearance="outline">
+              <mat-label>Type</mat-label>
+              <mat-select
+                placeholder="Choose Rate Type"
+                name="makingRate"
+                formControlName="makingRateType"
+                #makingtype
+              >
+                <mat-option value="percentage">Percentage</mat-option>
+                <mat-option value="perGram">Per Gram</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline" *ngIf="makingtype.value == 'percentage'">
+              <mat-label>Percentage Rate</mat-label>
+              <input formControlName="makingRate" type="number" matInput />
+              <span matSuffix>%</span>
+            </mat-form-field>
+            <mat-form-field appearance="outline" *ngIf="makingtype.value == 'perGram'">
+              <mat-label>Per Gram Rate</mat-label>
+              <input formControlName="makingRate" type="number" matInput />
+              <span matSuffix>/g</span>
+            </mat-form-field>
+          </div>
+          <hr>
+          <h2>
+            Taxes
+            <button
+              mat-icon-button
+              color="primary"
+              (click)="taxes.push({ name: '', cost: 0 })"
+            ><mat-icon>add</mat-icon></button>
+          </h2>
+          <div class="taxes">
+            <div class="row" *ngFor="let tax of taxes; let i = index">
+              <mat-form-field appearance="outline">
+                <mat-label>Tax Name</mat-label>
+                <input [(ngModel)]="tax.name" [ngModelOptions]="{standalone:true}" type="text" matInput />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Tax Cost</mat-label>
+                <input [(ngModel)]="tax.cost" [ngModelOptions]="{standalone:true}" type="number" matInput />
+              </mat-form-field>
+              <button mat-icon-button (click)="taxes.splice(0, i)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+            <hr>
+            <div class="row">
+              <p>Total Tax</p>
+              <p><strong>{{sumTaxes()}}</strong></p>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="actions">
+        <button mat-flat-button color="primary" matStepperNext (click)="generateVariants()">Next</button>
+      </div>
+    </mat-step>
+    <mat-step label="Variations">
+      <mat-tab-group>
+        <mat-tab label="All Variations">
+          <table class="uk-table uk-table-divider uk-table-middle uk-table-striped uk-width-1-1">
+            <tr *ngIf="finalCombinations.length > 0">
+              <ng-container *ngFor="let item of finalCombinations[0].variants">
+                <ng-container *ngIf="item.type == 'diamondType' && this.productForm.value.materials.includes('Diamond')">
+                  <th *ngIf="this.productForm.value.materials.includes('Diamond')">Diamond Name</th>
+                  <th *ngIf="this.productForm.value.materials.includes('Diamond')">Diamond Weight</th>
+                  <th *ngIf="this.productForm.value.materials.includes('Diamond')">Diamond Price</th>
+                </ng-container>
+                <ng-container *ngIf="item.type == 'stoneType' && this.productForm.value.materials.includes('Stone')">
+                  <th *ngIf="this.productForm.value.materials.includes('Stone')">Stone Name</th>
+                  <th *ngIf="this.productForm.value.materials.includes('Stone')">Stone Weight</th>
+                  <th *ngIf="this.productForm.value.materials.includes('Stone')">Stone Price</th>
+                  <th *ngIf="this.productForm.value.materials.includes('Stone')">Stone Total</th>
+                </ng-container>
+                <ng-container *ngIf="item.type == 'size' && this.productForm.value.materials.includes('Metal')">
+                  <th *ngIf="this.productForm.value.materials.includes('Metal')">Metal Size</th>
+                </ng-container>
+              </ng-container>
+              <th *ngIf="this.productForm.value.materials.includes('Metal')">Metal Name</th>
+              <th *ngIf="this.productForm.value.materials.includes('Metal')">Metal Weight</th>
+              <th *ngIf="this.productForm.value.materials.includes('Metal')">Metal Rate</th>
+              <th *ngIf="this.productForm.value.materials.includes('Metal')">Metal Total</th>
+              <th>Total Weight</th>
+              <th>Making Rate</th>
+              <th>Total Making</th>
+              <th>Tax Rate</th>
+              <th>Total Tax</th>
+              <th>Final Amount</th>
+              <!-- <th>Final W/Making</th> -->
+            </tr>
+            <tr *ngFor="let data of finalCombinations">
+              <ng-container *ngFor="let item of data.variants">
+                <ng-container *ngIf="item.type == 'purity' && this.productForm.value.materials.includes('Metal')">
+                  <td>{{this.metalForm.value.metal.name}} {{item.name}}</td>
+                  <td>{{data.goldWeight | number:'1.0-2'}}</td>
+                  <td>{{data.goldRate}}</td>
+                  <td>{{data.gold}}</td>
+                </ng-container>
+                <ng-container *ngIf="item.type == 'size' && this.productForm.value.materials.includes('Metal')">
+                  <td>Size: {{item.name}}</td>
+                </ng-container>
+                <ng-container *ngIf="item.type == 'diamondType' && this.productForm.value.materials.includes('Diamond')">
+                  <td>{{item.name}}</td>
+                  <td>{{item.weight| number:'1.0-2'}}</td>
+                  <td>{{item.price}}</td>
+                </ng-container>
+                <ng-container *ngIf="item.type == 'stoneType' && this.productForm.value.materials.includes('Stone')">
+                  <td>{{item.name}}</td>
+                  <td>{{item.weight| number:'1.0-2'}}</td>
+                  <td>{{item.price}}</td>
+                  <td>{{item.total}}</td>
+                </ng-container>
+              </ng-container>
+              <td>{{data.weight| number:'1.0-2'}}</td>
+              <td>{{data.makingRate}}</td>
+              <td>{{data.making | currency:'INR'}}</td>
+              <td>{{data.taxRate | currency:'INR'}}</td>
+              <td>{{data.totalTax | currency:'INR'}}</td>
+              <td>{{data.total| currency:'INR'}}</td>
+              <!-- <td>{{data.totalWithoutMaking | currency:'INR'}}</td> -->
+            </tr>
+          </table>
+        </mat-tab>
+        <mat-tab label="Size Group">
+          <ul uk-accordion>
+            <li *ngFor="let item of sizeGroupedCombinations">
+                <a class="uk-accordion-title" href="#">Size {{item.name}}</a>
+                <div class="uk-accordion-content">
+                  <table class="uk-table uk-table-divider uk-table-middle uk-table-striped uk-width-1-1">
+                    <tr *ngIf="item.variants">
+                      <ng-container *ngFor="let item of item.variants[0].variants">
+                        <ng-container *ngIf="item.type == 'diamondType' && this.productForm.value.materials.includes('Diamond')">
+                          <th *ngIf="this.productForm.value.materials.includes('Diamond')">Diamond Name</th>
+                          <th *ngIf="this.productForm.value.materials.includes('Diamond')">Diamond Weight</th>
+                          <th *ngIf="this.productForm.value.materials.includes('Diamond')">Diamond Price</th>
+                        </ng-container>
+                        <ng-container *ngIf="item.type == 'stoneType' && this.productForm.value.materials.includes('Stone')">
+                          <th *ngIf="this.productForm.value.materials.includes('Stone')">Stone Name</th>
+                          <th *ngIf="this.productForm.value.materials.includes('Stone')">Stone Weight</th>
+                          <th *ngIf="this.productForm.value.materials.includes('Stone')">Stone Price</th>
+                          <th *ngIf="this.productForm.value.materials.includes('Stone')">Stone Total</th>
+                        </ng-container>
+                        <ng-container *ngIf="item.type == 'size' && this.productForm.value.materials.includes('Metal')">
+                          <th *ngIf="this.productForm.value.materials.includes('Metal')">Metal Size</th>
+                        </ng-container>
+                      </ng-container>
+                      <th *ngIf="this.productForm.value.materials.includes('Metal')">Metal Name</th>
+                      <th *ngIf="this.productForm.value.materials.includes('Metal')">Metal Weight</th>
+                      <th *ngIf="this.productForm.value.materials.includes('Metal')">Metal Rate</th>
+                      <th *ngIf="this.productForm.value.materials.includes('Metal')">Metal Total</th>
+                      <th>Total Weight</th>
+                      <th>Making Rate</th>
+                      <th>Total Making</th>
+                      <th>Tax Rate</th>
+                      <th>Total Tax</th>
+                      <th>Final Amount</th>
+                      <!-- <th>Final W/Making</th> -->
+                    </tr>
+                    <tr *ngFor="let data of item.variants">
+                      <ng-container *ngFor="let item of data.variants">
+                        <ng-container *ngIf="item.type == 'purity' && this.productForm.value.materials.includes('Metal')">
+                          <td>{{this.metalForm.value.metal.name}} {{item.name}}</td>
+                          <td>{{data.goldWeight | number:'1.0-2'}}</td>
+                          <td>{{data.goldRate}}</td>
+                          <td>{{data.gold}}</td>
+                        </ng-container>
+                        <ng-container *ngIf="item.type == 'size' && this.productForm.value.materials.includes('Metal')">
+                          <td>Size: {{item.name}}</td>
+                        </ng-container>
+                        <ng-container *ngIf="item.type == 'diamondType' && this.productForm.value.materials.includes('Diamond')">
+                          <td>{{item.name}}</td>
+                          <td>{{item.weight| number:'1.0-2'}}</td>
+                          <td>{{item.price}}</td>
+                        </ng-container>
+                        <ng-container *ngIf="item.type == 'stoneType' && this.productForm.value.materials.includes('Stone')">
+                          <td>{{item.name}}</td>
+                          <td>{{item.weight| number:'1.0-2'}}</td>
+                          <td>{{item.price}}</td>
+                          <td>{{item.total}}</td>
+                        </ng-container>
+                      </ng-container>
+                      <td>{{data.weight| number:'1.0-2'}}</td>
+                      <td>{{data.makingRate}}</td>
+                      <td>{{data.making | currency:'INR'}}</td>
+                      <td>{{data.taxRate | currency:'INR'}}</td>
+                      <td>{{data.totalTax | currency:'INR'}}</td>
+                      <td>{{data.total| currency:'INR'}}</td>
+                      <!-- <td>{{data.totalWithoutMaking | currency:'INR'}}</td> -->
+                    </tr>
+                  </table>
+                </div>
+            </li>
+        </ul>
+        </mat-tab>
+      </mat-tab-group>
+      <div class="actions">
+        <button mat-flat-button (click)="submit()" color="primary">Save</button>
+        <button mat-stroked-button color="primary">Cancel</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</section>

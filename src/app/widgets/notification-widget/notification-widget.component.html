@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div class="first-section">
+        <i class="fa-solid fa-user-group"></i>
+        <div class="details">
+            <p>Monthly Installment {{installment_status}}</p>
+            <p>{{name}} <span>paid {{installment_amount}} as monthly installment of the {{installment_month_no}} month ({{installment_month}}).....<a class="text-primary">Know More</a></span></p>
+        </div>
+    </div>
+    <div class="second-section">
+        <p>{{day}}</p>
+        <p>{{time}}</p>
+    </div>
+    <ng-container *ngIf="isCheckBoxVisible">
+        <i class="ri-checkbox-circle-fill" (click)="uncheck()" *ngIf="checked"></i>
+        <i class="ri-checkbox-blank-circle-line" (click)="check()" *ngIf="!checked"></i>
+    </ng-container>
+</div>

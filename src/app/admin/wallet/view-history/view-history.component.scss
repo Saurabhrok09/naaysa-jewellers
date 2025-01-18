@@ -1,0 +1,40 @@
+.lt-container{
+    margin-top: 4em;
+    
+    width: 100%;
+    height: auto;
+  
+  }
+  .m-container{
+    width: 100%;
+    height: 600px;
+  }
+  .p-heading{
+    font-size: var(--medium);
+  }
+  
+  .roww1{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+  .roww2{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 1em;
+    border: 1px solid #BB6878;
+    border-radius: 10px;
+    margin-bottom: 1em;
+  
+    p{
+      margin-top: 6px;
+      font-size: var(--xsmall);
+    }
+    .c-txt{
+      color: #009970;
+    }
+  }
+  .row3{
+    border-bottom: 1px solid black;
+  }
+  

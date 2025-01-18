@@ -1,0 +1,149 @@
+<app-header></app-header>
+<button (click)="adduser()" class="au-btn">Add Users</button>
+<mat-tab-group>
+    <mat-tab label="Users">
+        <div class="parent-container">
+            <div class="chart">
+                <img src="assets/chart4.png" alt="">
+            </div>
+            <div class="boxes">
+                <div class="scores">
+                    <div class="points">
+                        <p class="numbers">{{tenplusone_Users}}</p>
+                        <p>Orders</p>
+                    </div>
+                    <p class="more">See more</p>
+                </div>
+                <div class="scores">
+                    <div class="points">
+                        <p class="numbers">{{total_Users}}</p>
+                        <p>Orders</p>
+                    </div>
+                    <p class="more">See more</p>
+                </div>
+            </div>
+        </div>
+        <div class="table">
+            <div class="heading">
+                <p>All Users</p>
+            </div>
+            <table>
+                <tr>
+                    <th width="10%">Id</th>
+                    <th width="20%">Name</th>
+                    <th width="10%">Email</th>
+                    <th width="10%">No. of<br>Purchase</th>
+                    <th width="10%">Join<br>Date</th>
+                    <th width="10%">End<br>Date</th>
+                    <th width="10%">Total<br>Value</th>
+                    <th width="10%">Monthly<br>Recieved</th>
+                    <th width="10%">Available<br>Options</th>
+                </tr>
+                <tr *ngFor="let user of users">
+                    <td>{{user.id}}</td>
+                    <td>
+                        <div class="profile">
+                            <img src="{{user.image}}" alt="">
+                            <div class="details">
+                                <p>{{user.name}}</p>
+                                <p>{{user.last_Name}}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td><p>{{user.emailId}}</p></td>
+                    <td id="purchase"><p>{{user.purchase}}</p></td>
+                    <td><p class="uk-alert-danger">{{user.dateJoin}}</p></td>
+                    <td><p>{{user.dateExp}}</p></td>
+                    <td><p class="uk-alert-success">{{user.totalvalue}}</p></td>
+                    <td><p class="uk-alert-warning">{{user.monthlyrecieved}}</p></td>
+                    <td class="icons">
+                        <p><i class="fa-solid fa-user-pen"></i></p>
+                        <p><i class="fa-solid fa-user-xmark"></i></p>
+                        <p><i class="fa-solid fa-user"></i></p>
+                        <p><i class="fa-solid fa-phone"></i></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="mobile-view">
+            <div class="heading">
+                <p>All Users</p>
+            </div>
+            <div class="mobile-widget">
+                <app-admin-mobile-users-widget *ngFor="let components of mobile_users"></app-admin-mobile-users-widget>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="10+1 User">
+        <div class="parent-container">
+            <div class="chart">
+                <img src="assets/chart4.png" alt="">
+            </div>
+            <div class="boxes">
+                <div class="scores">
+                    <div class="points">
+                        <p class="numbers">{{tenplusone_Users}}</p>
+                        <p>Orders</p>
+                    </div>
+                    <p class="more">See more</p>
+                </div>
+                <div class="scores">
+                    <div class="points">
+                        <p class="numbers">{{total_Users}}</p>
+                        <p>Orders</p>
+                    </div>
+                    <p class="more">See more</p>
+                </div>
+            </div>
+        </div>
+        <div class="table">
+            <div class="heading">
+                <p>All Users</p>
+            </div>
+            <table>
+                <tr>
+                    <th width="10%">Id</th>
+                    <th width="20%">Name</th>
+                    <th width="10%">Email</th>
+                    <th width="10%">No. of<br>Purchase</th>
+                    <th width="10%">Join<br>Date</th>
+                    <th width="10%">End<br>Date</th>
+                    <th width="10%">Total<br>Value</th>
+                    <th width="10%">Monthly<br>Recieved</th>
+                    <th width="10%">Available<br>Options</th>
+                </tr>
+                <tr *ngFor="let user of users">
+                    <td>{{user.id}}</td>
+                    <td>
+                        <div class="profile">
+                            <img src="{{user.image}}" alt="">
+                            <div class="details">
+                                <p>{{user.name}}</p>
+                                <p>{{user.last_Name}}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td><p>{{user.emailId}}</p></td>
+                    <td id="purchase"><p>{{user.purchase}}</p></td>
+                    <td><p class="uk-alert-danger">{{user.dateJoin}}</p></td>
+                    <td><p>{{user.dateExp}}</p></td>
+                    <td><p class="uk-alert-success">{{user.totalvalue}}</p></td>
+                    <td><p class="uk-alert-warning">{{user.monthlyrecieved}}</p></td>
+                    <td class="icons">
+                        <p><i class="fa-solid fa-user-pen"></i></p>
+                        <p><i class="fa-solid fa-user-xmark"></i></p>
+                        <p><i class="fa-solid fa-user"></i></p>
+                        <p><i class="fa-solid fa-phone"></i></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </mat-tab>
+</mat-tab-group>
+
+
+
+
+     <!-- ............add USers........... -->
+
+

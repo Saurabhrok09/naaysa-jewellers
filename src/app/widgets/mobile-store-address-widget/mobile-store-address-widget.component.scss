@@ -1,0 +1,39 @@
+.container{
+    margin: 10px;
+    width: 90%;
+    #heading{
+        font-size: var(--xsmall);
+        font-weight: 500;
+    }
+    .widget{
+        margin-top: 15px;
+        background-color: #fff;
+        border-radius: 10px;
+        border: 2px solid var(--color-dark-primary);
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        i{
+            color: var(--color-dark-primary);
+            display: block;
+            margin: auto;
+            font-size: var(--medium);
+        }
+        .icon{
+            text-align: center;
+            margin-right: 15px;
+        }
+        .details{
+            p:nth-child(1){
+                font-size: var(--xxsmall);
+                font-weight: 450;
+                line-height: 10px;
+            }
+            p:nth-child(2){
+                line-height: 18px;
+                margin-bottom: 0px;
+                font-size: var(--xxxsmall);
+            }
+        }
+    }   
+}

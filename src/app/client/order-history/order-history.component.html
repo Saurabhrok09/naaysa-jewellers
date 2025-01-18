@@ -1,0 +1,28 @@
+
+<section>
+  <div class="conatiner">   
+    <div class="conatiner_header">
+      <h3><i class="ri-archive-line"></i> Order History</h3>
+      <div class="uk-inline">
+        <button class="uk-button uk-button-default uk-float-center" type="button">
+          Time period <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div uk-dropdown="mode: click" class="dropdown">
+          <ul style="cursor: pointer;">
+            <li>6 month</li>
+            <li>2022</li>
+            <li>2021</li>
+            <li>2000</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="histories">
+  <app-history [arrived]="true" routerLink="../order-history/:id"></app-history>
+  <app-history [arrived]="false" routerLink="../order-history/:id"> </app-history>
+    </div>
+   
+  </div>
+</section>
+<app-footer></app-footer>

@@ -1,0 +1,118 @@
+<div class="shop-head">
+    <img src="assets/left.png">
+    <h3>Customer Reviews</h3>
+    <img src="assets/right.png">
+</div>
+<section class="rigth-section">
+    <div class="cust-review">
+        <div class="title">
+            <p>Customer Reviews</p>
+        </div>
+
+        <div class="avarage">
+            <div class="common-review">
+                <app-star></app-star>
+                <h4> Avarage 2.5/5</h4>
+            </div>
+           
+            <p>Based on 18 Reviews & Ratings </p>
+        </div>
+        <div class="features">
+            <p class="fea-title">By Features</p>
+            <div class="common-div">
+                <p>style :<app-star></app-star></p>
+            </div>
+            <div class="common-div">
+                <p>weight :<app-star></app-star></p>
+            </div>
+            <div class="common-div">
+                <p>comfort :<app-star></app-star></p>
+            </div>
+
+
+
+        </div>
+        <div class="buttons">
+            <div>
+                <button id="but-1">DESIGN (8)</button>
+                <button>QUALITY(8)</button>
+            </div>
+            <div>
+                <button id="but-1">SIZE/FIT(10)</button>
+                <button>CUSTOMER(3)</button>
+            </div>
+        </div>
+    </div>
+    <div class="review-details">
+        <div class="sec-review">
+            <p>Review with Images</p>
+            <div><button>Write Review</button></div>
+        </div>
+        <div class="review-img">
+            <img src="../../../assets/product-review/Rectangle 511.png" alt="">
+            <img src="../../../assets/product-review/Rectangle 512.png" alt="">
+            <img src="../../../assets/product-review/Rectangle 513.png" alt="">
+            <img src="../../../assets/product-review/Rectangle 928.png" alt="">
+        </div>
+        <div class="review-star">
+            <!-- <button>Top Review</button> -->
+            <nav uk-dropnav>
+                <ul class="uk-tab">
+                    <li>
+                        <a href="#">Top Review <span uk-drop-parent-icon></span></a>
+                        <div class="uk-dropdown">
+                            <ul class="uk-nav uk-dropdown-nav">
+                                <!-- <li class="uk-active"><a href="#">Active</a></li> -->
+                                <li><a href="#">Top Reviews</a></li>
+                                <hr id="uk-dropdown-hr">
+                                <li><a href="#">Most Recent</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">All Stars <span uk-drop-parent-icon></span></a>
+                        <div class="uk-dropdown">
+                            <ul class="uk-nav uk-dropdown-nav">
+                                <!-- <li class="uk-active"><a href="#">Active</a></li> -->
+                                <li><a href="#">5 Star</a></li>
+                                <hr id="uk-dropdown-hr">
+                                <li><a href="#">4 Star</a></li>
+                                <hr id="uk-dropdown-hr">
+                                <li><a href="#">3 Star</a></li>
+                                <hr id="uk-dropdown-hr">
+                                <li><a href="#">2 Star</a></li>
+                                <hr id="uk-dropdown-hr">
+                                <li><a href="#">1 Star</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <section class="container-1">
+            <div class="cust-review-1" *ngFor="let reviews of customerReview">
+                <div class="cust-icon">
+                    <div class="left">
+                        <img [src]="reviews.userImage" alt="">
+                        <p>{{reviews.name}} <br>   <app-star></app-star></p>
+                        
+                    </div>
+                  
+                    <div class="right">
+                        <button>{{reviews.description}}</button>
+                    </div>
+                </div>
+                <div class="vote">
+                    <p><i class="ri-thumb-up-line" id="thumb"></i>{{reviews.feedBack}}</p>
+                </div>
+                <div class="cust-added-summary">
+                    <p>{{reviews.selfReviw}}</p>
+                </div>
+                <div class="cust-added-images">
+                    <img [src]="reviews.productImage" alt="">
+                </div>
+            </div>
+        </section>
+    </div>
+
+</section>

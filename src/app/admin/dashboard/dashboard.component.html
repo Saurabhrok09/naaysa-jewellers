@@ -1,0 +1,126 @@
+<div class="quick-links">
+  <div class="links">
+    <p>Quick Links</p>
+    <button>Add Product</button>
+    <button>Add Category</button>
+    <button>Add Vendor</button>
+    <button>Add User</button>
+    <button>Add Offer</button>
+  </div>
+  <div class="icons">
+    <i class="fa-solid fa-user"></i>
+    <i
+      class="fa-solid fa-bell"
+      routerLink="../notification"
+      style="cursor: pointer"
+    ></i>
+  </div>
+</div>
+<div class="mobile-view">
+  <button><img src="assets/icons/add-product.png" alt=""> Add<br>Product</button>
+  <button><img src="assets/icons/add-user.png" alt=""> Add<br>User</button>
+  <button><img src="assets/icons/add-cate.png" alt="">  Add<br>Category</button>
+  <button><img src="assets/icons/offer.png" alt="">  Add<br>Offer</button>
+</div>
+<div class="boxes">
+  <div class="scores">
+    <div class="points">
+      <p class="numbers">{{ orders }}</p>
+      <p>Orders</p>
+    </div>
+    <p id="martt">See more</p>
+  </div>
+  <div class="scores">
+    <div class="points">
+      <p class="numbers">{{ orders }}</p>
+      <p>Orders</p>
+    </div>
+    <p id="martt">See more</p>
+  </div>
+  <div class="scores">
+    <div class="points">
+      <p class="numbers">{{ orders }}</p>
+      <p>Orders</p>
+    </div>
+    <p id="martt">See more</p>
+  </div>
+  <div class="scores">
+    <div class="points">
+      <p class="numbers">{{ orders }}</p>
+      <p>Orders</p>
+    </div>
+    <p id="martt">See more</p>
+  </div>
+</div>
+<div class="charts">
+  <div class="chart">
+    <canvas id="line" ></canvas>
+  </div>
+  <div class="chart">
+    <canvas id="doughnut" style="height:275px;width:200px" ></canvas>
+  </div>
+</div>
+<div class="section1">
+    <div class="table">
+      <div class="heading">
+        <p>Product Sales</p>
+      </div>
+      <table>
+        <tr>
+          <th width="22%"></th>
+          <th width="13%"></th>
+          <th width="13%"></th>
+          <th width="13%"></th>
+          <th width="13%"></th>
+          <th width="13%"></th>
+          <th width="13%"></th>
+        </tr>
+        <tr *ngFor="let item of items">
+          <td>
+            <div class="product">
+              <img src="/assets/ring1.png" alt="" />
+              <div class="info">
+                <p class="product-heading">{{ product_Name }}</p>
+                <p>{{ product_Id }}</p>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="material">
+              <p>{{ material }}</p>
+            </div>
+          </td>
+          <td>
+            <div class="material quanity">
+              <p>{{ weight }}</p>
+            </div>
+          </td>
+          <td>
+            <p class="price">{{ price }}</p>
+          </td>
+          <td>
+            <p class="sold">Sold: {{ sold_Number }}</p>
+          </td>
+          <td>
+            <p class="sold">Returned:{{ returned_Number }}</p>
+          </td>
+          <td>
+            <button class="more">More Info</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+</div>
+<div class="mobile-section">
+  <div class="heading">
+    <p>Product Sales</p>
+  </div>
+  <app-admin-mobile-dashboard-widget *ngFor="let widget of mobile_widgets" [src]="widget.src" 
+  [material]="widget.material"
+  [product_Name]="widget.product_Name"
+  [product_Id]="widget.product_Id"
+  [product_price]="widget.product_price"
+  [sold]="widget.sold"
+  [return]="widget.return"
+  [weight]="widget.weight"></app-admin-mobile-dashboard-widget>
+</div>

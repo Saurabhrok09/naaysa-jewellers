@@ -1,0 +1,108 @@
+.container{
+    background: #FFFFFF;
+    border-radius: 48px;
+    max-width: 762px;
+
+    #closeIcon {
+        display: flex;
+        justify-content: flex-end;
+
+        cursor: pointer;
+    }
+
+    .main{
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .inputSec{
+            background: #FFFFFF;
+            border: 1.84722px solid #8F9BB3;
+            border-radius: 8px;
+            width: 100%;
+            height: 50px;
+            padding: 12px;
+            display: flex;
+            justify-content: space-between;
+
+            button{
+                border: none;
+                color:#E88F9F;
+                cursor: pointer;
+                background: #FFFFFF;
+
+                font-family: var(--font-);
+                font-weight: 600;
+            }
+            input{
+                border:none;
+
+                &:focus-visible{
+                    outline: none;
+                }
+            }
+        }
+        .couponSec{
+            width:100%;
+
+            display:flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .couponBlock{
+                border: 2px solid #E9E9E9;
+                box-shadow: 0px 4px 24px rgba(22, 22, 22, 0.05);
+                border-radius: 8px;
+
+                padding:16px;
+
+                min-height: 77px;
+                min-width: 460px;
+
+                display: flex;
+                flex-direction: row;
+                gap:8px;
+
+                .discount{
+                    width: 15%;
+                    font-weight: 600;
+                    font-size: (--medium);
+                    font-family: var(--font-eight);
+                    background-color: #FFE4E4;
+                    color:#BB6878;
+                    border-radius: 50%;
+                    
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .mainBlock{
+                    display:flex;
+                    flex-direction: column;
+                    width:80%;
+
+                    .couponName{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content:space-between;
+                        align-items: center;
+
+                        #heading{
+                            color:#5C5E62;
+                            font-size: var(--msmall);
+                        }
+                        button{
+                            color: #E88F9F;
+                            border-radius: 16px;
+                            border: 1px solid #E88F9F;
+                            background-color: #FFFFFF;
+                            padding: 8px 16px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

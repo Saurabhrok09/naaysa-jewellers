@@ -1,0 +1,152 @@
+<div class="wrapper" *ngIf="">
+  <mat-spinner></mat-spinner>
+</div>
+<div id="wrapper" (window:resize)="onWindowResize()">
+  <div id="sidebar-container">
+    <div
+      [style]="largeScreen || showSidebar ? '' : 'display: none'"
+      id="sidebar-container"
+    >
+      <aside id="sidebar">
+        <div id="headings">
+          <h1 class="logo">
+            <span>NAAYSA</span
+            ><img src="assets/logo.svg" alt="Logo" id="logo" /><span
+              class="secondary-color"
+              >JEWELLERS</span
+            >
+          </h1>
+          <div id="profile-info">
+            <img
+              src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              alt="Profile Photo"
+            />
+            <div>
+              <p id="admin-name">Sweet Singh</p>
+              <p id="admin-email">sweetsingh@gmail.com</p>
+            </div>
+          </div>
+        </div>
+        <ul id="sidebar-ul">
+          <li class="sidebar-li">
+            <a
+              routerLink="/admin/dashboard"
+              routerLinkActive="active"
+              (click)="toggleSidebar()"
+              class="sidebar-li-a"
+              ><i class="fa-solid fa-house sidebar-icon"></i
+              ><span class="sidebar-text">Dashboard</span></a
+            >
+          </li>
+          <li class="sidebar-li">
+            <a
+              routerLink="/admin/orders"
+              routerLinkActive="active"
+              (click)="toggleSidebar()"
+              class="sidebar-li-a"
+              ><i class="fa-solid fa-clipboard-list sidebar-icon"></i
+              ><span class="sidebar-text">Orders</span></a
+            >
+          </li>
+          <li class="sidebar-li">
+            <a
+              routerLink="/admin/users"
+              routerLinkActive="active"
+              (click)="toggleSidebar()"
+              class="sidebar-li-a"
+              ><i class="fa-solid fa-user"></i>
+              <span class="sidebar-text">Users</span></a
+            >
+          </li>
+          <li class="sidebar-li">
+            <a
+              routerLink="/admin/materials"
+              routerLinkActive="active"
+              (click)="toggleSidebar()"
+              class="sidebar-li-a"
+              >
+              <i class="ri-vip-diamond-fill"></i>
+              <span class="sidebar-text">Materials</span></a
+            >
+          </li>
+          <li class="sidebar-li">
+            <a
+              routerLink="/admin/products"
+              routerLinkActive="active"
+              (click)="toggleSidebar()"
+              class="sidebar-li-a"
+              ><i class="fa-solid fa-box sidebar-icon"></i
+              ><span class="sidebar-text">Products</span></a
+            >
+          </li>
+          <li class="sidebar-li">
+            <a
+              routerLink="/admin/vendors"
+              routerLinkActive="active"
+              (click)="toggleSidebar()"
+              class="sidebar-li-a"
+              ><i class="ri-group-fill"></i>
+              <span class="sidebar-text">Vendors</span></a
+            >
+          </li>
+          <li class="sidebar-li">
+            <a
+              routerLink="/admin/notification"
+              routerLinkActive="active"
+              (click)="toggleSidebar()"
+              class="sidebar-li-a"
+              ><i class="ri-notification-2-line"></i>
+              <span class="sidebar-text">notifications</span></a
+            >
+          </li>
+          <li class="sidebar-li">
+            <a
+              routerLink="/admin/offers"
+              routerLinkActive="active"
+              (click)="toggleSidebar()"
+              class="sidebar-li-a"
+              ><i class="fa-solid fa-tag"></i>
+              <span class="sidebar-text">Offers</span></a
+            >
+          </li>
+          <li class="sidebar-li">
+            <a
+              routerLink="/admin/feedback"
+              routerLinkActive="active"
+              (click)="toggleSidebar()"
+              class="sidebar-li-a"
+              ><i class="ri-feedback-fill"></i>
+              <span class="sidebar-text">feedbacks </span></a
+            >
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+
+  <main>
+    <header class="shadow">
+      <button
+        *ngIf="!largeScreen"
+        class="uk-navbar-toggle"
+        uk-navbar-toggle-icon
+        id="toggle-button"
+        (click)="toggleSidebar()"
+      ></button>
+
+      <p>
+       {{currentPanel}}
+      </p>
+      <div class="user">
+        <i class="ri-notification-2-fill" routerLink="../admin/notification"></i>
+        <img src="https://i.pravatar.cc/300" alt="" routerLink="../admin/profile">
+      </div>
+
+    </header>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+    <div id="overlay" (click)="showSidebar && toggleSidebar()"></div>
+  </main>
+
+</div>

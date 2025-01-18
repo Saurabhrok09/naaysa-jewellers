@@ -1,0 +1,28 @@
+section{
+  background: white;
+  border-radius: 30px;
+  padding: 30px;
+  min-width: 40vw;
+  .sizes{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 75vh;
+    display: flex;
+    li{
+      margin-left: 20px;
+    }
+  }
+}
+.example-section {
+    margin: 12px 0;
+  }
+  
+  .example-margin {
+    margin: 0 12px;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin-top: 4px;
+  }
+  

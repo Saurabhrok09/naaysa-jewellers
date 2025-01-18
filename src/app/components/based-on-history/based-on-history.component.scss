@@ -1,0 +1,119 @@
+#history {
+    width: 90%;
+    margin: auto;
+    margin: 50px auto;
+
+    h1 {
+        color: #834854;
+        font-weight: bolder;
+        font-family: "Andada Pro";
+        font-size: 27px;
+        text-align: left;
+        padding-left: 40px;
+    }
+
+    div {
+
+        li {
+            width: fit-content;
+            margin: 0 15px;
+
+            span {
+
+                h2 {
+                    color: #BB6878;
+                    margin: 0;
+                }
+
+                s {
+                    font-size: 12px;
+                }
+
+                p {
+                    color: #BB6878;
+                    margin: 0;
+                    font-size: 20px;
+                }
+
+                nav {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+.card {
+    border: none;
+    padding: 20px;
+}
+
+.lable {
+    width: 83px;
+    background-color: #E88F9F;
+    border-radius: 0px 40px 0px 0px;
+    position: absolute;
+    color: white;
+    padding: 6px 16px;
+    text-align: center;
+    top: 57%;
+}
+
+.cardp p {
+    font-family: 'Quando';
+    font-size: 15px;
+}
+
+.cardp {
+    border-radius: 0px 0px 30px 30px;
+    border: 1px solid #E88F9F;
+    width: 100%;
+    height: 85px;
+    text-align: center;
+    font-family: 'Quando';
+    font-size: 16px;
+    padding-top: 12px;
+    border-top: none
+}
+
+.hr {
+
+    width: 18%;
+    border: 1px solid #e28092;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7px;
+}
+
+.cardp1 {
+    color: #E88F9F;
+    font-size: 17px;
+}
+
+.uk-position-center-left {
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    background-color:
+        #E88F9F;
+    border: 1px solid #E88F9F;
+    border-radius: 50%;
+    // padding: 10px;
+    text-align: center;
+    margin-left: 0px;
+}
+
+.uk-position-center-right {
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    background-color:
+        #E88F9F;
+    color: white;
+    border: 1px solid #E88F9F;
+    border-radius: 50%;
+    // padding: 10px;
+    text-align: center;
+    margin-right: 0px;
+}

@@ -1,0 +1,74 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: 15px 10px;
+    border-bottom: 1px solid #b4b4b4;
+    .parent{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .profile{
+            display: flex;
+            align-items: center;
+            width: 68%;
+            img{
+                width: 55px;
+                height: 55px;
+                object-fit: cover;
+                margin-right: 15px;
+                margin-top: -8px;
+                border-radius: 5px;
+            }
+            .details{
+                p:nth-child(1){
+                    font-size: var(--xsmall);
+                    font-weight: 400;
+                    color: rgb(65, 65, 65);
+                    margin-bottom: 5px;
+                }
+                p:nth-child(2){
+                    font-size: var(--xxxsmall);
+                    line-height: 05px;
+                }
+                p:nth-child(3){
+                    color: #00B986;
+                    font-size: var(--xxsmall);
+                }
+            }
+        }
+        .sold-return{
+            width: 30%;
+            color: #FF8F73;
+        }
+    }
+    .second-parent{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .material {
+            border: 2px solid var(--color-secondary-darker);
+            border-radius: 15px;
+            font-size: var(--xxxsmall);
+            padding: 1px 5px;
+            background-color: #FFD5D5;
+            color: var(--color-secondary-darker);
+        }
+        .quanity {
+            background-color: #DEF0FF;
+            border: 2px solid #3E94E0;
+            padding: 1px 5px;
+            border-radius: 15px;
+            color: #3E94E0;
+            font-size: var(--xxxsmall);
+        }
+        button{
+            background-color: #ff9292;
+            color: #fff;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            font-size: var(--xxsmall);
+            margin-top: -10px;
+        }
+    }
+}

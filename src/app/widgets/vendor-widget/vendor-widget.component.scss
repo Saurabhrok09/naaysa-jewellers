@@ -1,0 +1,51 @@
+.container{
+    background-color: #FFF2F5;
+    padding: 15px;
+    border-radius: 15px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    .details{
+        margin-top: 15px;
+    }
+    p{
+        margin-left: 10px;
+        color: grey;
+        span{
+            color: grey;
+            opacity: .8;
+        }
+    }
+    #view{
+        border: none;
+        background-color: var(--color-secondary-dark);
+        color: #fff;
+        border-radius: 20px;
+        padding: 3px 15px;
+        display: block;
+        margin: auto;
+        margin-top: 15px;
+        font-size: var(--xxsmall);
+        cursor: pointer;
+        transition: 0.5s;
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+}
+@media only screen and (max-width: 600px){
+    .container{
+        .details{
+            p{
+
+                font-size: var(--xxxsmall);
+            }
+        }
+        
+        #view{
+            font-size: var(--xxxsmall);
+            border-radius: 10px;
+        }
+    }
+}

@@ -1,0 +1,171 @@
+<header class="desktop_version">
+  <!-- <div class="topBar">
+    <div class="logo">
+      <span>NAAYSA</span><img src="assets/logo.svg" alt="Logo" id="logo" /><span
+        class="secondary-color">JEWELLERS</span>
+    </div>
+  </div> -->
+
+  <div class="top-head-bar">
+    <span routerLink="">
+      <img src="assets/logo.png" />
+      <h1>NAAYSA</h1>
+    </span>
+
+    <div class="search">
+      <input type="text" placeholder="Search for Jewellery" />
+      <button>Search</button>
+    </div>
+
+    <button class="plan">
+      <p>10 + 1 Monthly Plan</p>
+    </button>
+
+    <span>
+      <button class="action" routerLink="cart">
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+      <button class="action" routerLink="profile">
+        <mat-icon>person</mat-icon>
+      </button>
+      <button class="action" (click)="showOffcanvas()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <img src="assets/user.png" id="user_img" />
+    </span>
+    <!-- <mat-icon>arrow_drop_down</mat-icon> -->
+  </div>
+  <!-- menu bar -->
+  <nav class="uk-navbar-container" uk-navbar>
+    <ul class="uk-navbar-nav">
+      <li *ngFor="let item of topBarItems">
+        <span href="#" class="title">
+          <p>{{ item.title }}</p>
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </span>
+        <div class="uk-dropbar uk-dropbar-top" uk-drop="stretch: x;animation: slide-top; animate-out: true">
+          <div class="container">
+            <nav style="display: flex">
+              <h4>Shop By Style</h4>
+              <div *ngFor="let link of item.styles" [routerLink]="link.link">
+                <img [src]="link.image" [alt]="link.title" />
+                <span>{{ link.title }}</span>
+              </div>
+            </nav>
+            <nav>
+              <h4>Shop By Metal & Stone</h4>
+              <div *ngFor="let link of item.byMetals" [routerLink]="link.link">
+                <img [src]="link.image" [alt]="link.title" />
+                <span>{{ link.title }}</span>
+              </div>
+            </nav>
+            <nav>
+              <h4>Shop By</h4>
+              <div *ngFor="let link of item.shopBy" [routerLink]="link.link">
+                <span>{{ link.title }}</span>
+              </div>
+            </nav>
+            <nav >
+              <img class="banner" [src]="item.banner" [alt]="item.title" />
+            </nav>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <!-- new menu bar end -->
+  
+  <div class="searchBarSep mobileOnly" *ngIf="searchVisible">
+    <div id="search-box" class="uk-animation-scale-up">
+      <div class="field">
+        <input type="text" />
+        <button><i class="fa-solid fa-arrow-right-long"></i></button>
+        <button (click)="searchVisible = false">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+<div
+  id="offcanvas-container"
+  #offcanvasContainer
+  (click)="hideOffcanvas($event)"
+>
+  <div id="offcanvas" #offcanvas>
+    <div id="profile" routerLink="/profile">
+      <img
+        src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      />
+      <h4>Sudipta Doe</h4>
+    </div>
+    <ul>
+      <li>
+        <button routerLink="/cart " routerLink="/cart">
+          <i class="fa-solid fa-cart-shopping"></i> My Cart
+        </button>
+      </li>
+      <li>
+        <button routerLink="/order-history">
+          <i class="fa-solid fa-clipboard-list"></i> My Orders
+        </button>
+      </li>
+      <li>
+        <button routerLink="/add-delivery-address">
+          <i class="fa-solid fa-address-card"></i> My Address
+        </button>
+      </li>
+      <li>
+        <button routerLink="/payment-options">
+          <i class="fa-solid fa-credit-card"></i> Payment Method
+        </button>
+      </li>
+      <li>
+        <button routerLink="/admin">
+          <i class="fa-solid fa-credit-card"></i> Admin Panel
+        </button>
+      </li>
+      <li>
+        <button routerLink="/login">
+          <i class="fa-solid fa-arrow-left"></i> Logout
+        </button>
+      </li>
+    </ul>
+    <div class="actions">
+      <button (click)="searchVisible = true" #searchButton id="search-button">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+      <button routerLink="cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </button>
+      <button routerLink="login" routerLink="/login">
+        <i class="fa-solid fa-user"></i>
+      </button>
+      <button (click)="showOffcanvas()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="mobile_view">
+  <button (click)="showOffcanvas()" class="mobileOnly">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <div class="logo" routerLink="/">
+    <img src="assets/logo.svg" alt="Logo" id="logo" />
+    <span>NAAYSA</span>
+  </div>
+  <div class="buttons">
+    <button routerLink="../wishlist">
+      <i class="fa-regular fa-heart"></i>
+    </button>
+    <button routerLink="../locate-store">
+      <i class="ri-store-3-line"></i>
+    </button>
+    <button routerLink="../cart">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </button>
+  </div>
+</div>

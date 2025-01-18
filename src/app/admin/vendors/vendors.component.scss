@@ -1,0 +1,87 @@
+.container{
+    margin-right: 10px;
+    #heading{
+        color: var(--color-secondary-dark);
+        font-size: var(--medium);
+        font-weight: 500; 
+        margin-left: 10px;
+    }
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        .links{
+            background-color: var(--color-secondary-dark);
+            padding: 0px 15px;
+            border-radius: 10px;
+            i{
+                margin-right: 10px;
+            }
+            button{
+                background-color: var(--color-secondary-darker);
+                color: #fff;
+                font-weight: 500;
+                border: none;
+                padding: 5px 10px;
+                margin: 5px 0px;
+                margin-left: 5px;
+                cursor: pointer;
+                transition: .3s;
+                border-radius: 5px;
+                &:hover{
+                    transform: scale(1.1);
+                }
+                i{
+                    margin-right: 5px;
+                  }
+            }
+        }
+    }
+    .uk-margin{
+        display: flex;
+        align-items: center;
+        span{
+            color: var(--color-secondary-darker);
+        }
+        input{
+            border: 2px solid var(--color-secondary-darker);
+            border-radius: 10px;
+            color: var(--color-secondary-darker);
+        }
+        #bell{
+            font-size: var(--medium);
+            color: var(--color-secondary-darker);
+            margin-left: 25px;
+            cursor: pointer;
+        }
+        #edit{
+            background-color: var(--color-secondary-darker);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 5px 15px;
+            margin: 0px 15px;
+            display: flex;
+            align-items: center;
+            i{
+                font-size: var(--msmall);
+                margin-left: 5px;
+            }
+        }
+    }
+    .widgets{
+        display: grid;
+        grid-template: auto / auto auto auto; 
+    }
+}
+@media only screen and (max-width: 600px){
+    .container{
+        margin-right: 0;
+        .widgets{
+            display: grid;
+            grid-template: auto / auto auto;
+            grid-gap: 15px;
+        }
+    }
+}

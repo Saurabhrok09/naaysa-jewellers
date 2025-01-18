@@ -1,0 +1,214 @@
+* {
+  box-sizing: border-box;
+  font-family: var(--font-one);
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  color: grey;
+  width: 100%;
+  height: fit-content;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  padding: 1rem;
+  .section1 {
+    width: 30%;
+    min-width: 450px;
+    border: 1px solid #969696;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 15px;
+    #pay {
+      font-size: var(--small);
+      font-weight: 600;
+      color: var(--color-dark-primary);
+    }
+    .box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+    .box:nth-child(1) {
+      p {
+        font-size: var(--medium);
+        font-weight: 600;
+        font-family: var(--font-one);
+        color: grey;
+      }
+    }
+    .box:nth-child(2) {
+      margin-top: 15px;
+      p {
+        font-size: var(--small);
+        font-weight: 500;
+        font-family: var(--font-one);
+      }
+      p:nth-child(2) {
+        color: var(--color-success);
+      }
+    }
+    .box:nth-child(3) {
+      p {
+        font-size: var(--small);
+        font-weight: 500;
+        font-family: var(--font-one);
+      }
+      p:nth-child(2) {
+        color: tomato;
+      }
+    }
+  }
+  .section2 {
+    width: 65%;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #969696;
+    background-color: #fff;
+    p {
+      font-size: var(--medium);
+      font-weight: 600;
+    }
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td,
+    th {
+      border-bottom: 1px solid grey;
+      text-align: left;
+      padding: 15px 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #ffe9ed;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+}
+.mobile_wallet {
+  display: none;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    height: fit-content;
+    display: block;
+    p {
+      font-size: 18px;
+      font-weight: 600;
+      color: black;
+      padding:  1rem;
+    }
+    .card {
+      width: 90%;
+      margin: auto;
+      height: 35rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap:0.5rem;
+      flex-direction: column;
+      height: 10rem;
+      background-color: transparent;
+      box-sizing: border-box;
+      border-radius: 0.5rem;
+      background-color: #fff;
+      // border: 2px solid var(--color-dark-primary);
+      padding: 1rem;
+      box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+      .card_header {
+          width: 100%;
+          height: 40%;
+          img {
+              width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin-bottom: 20px;
+          object-fit: cover;
+          border: 3px solid var(--color-dark-primary);
+          
+        }
+        display: flex;
+        gap: 1rem;
+        h4{
+          display: flex;
+          font-weight: 500;
+          b{
+             color: #969696;
+  
+          }
+          flex-direction: column;
+        }
+      }
+      .balance{
+          p{
+            padding: 0.5rem 0;
+              margin: 0;
+              font-size: var(--xsmall);
+          }
+          width: 100%;
+          height: 10%;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+      }
+    }
+    .paymnet_mode{
+      width: 90%;
+      margin: auto;
+    }
+    .history{
+      width: 90%;
+      
+      margin:1rem auto;
+      border-bottom: 1px solid grey;
+      .table1{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .table2{
+        font-size: var(--medium);
+        font-weight: 500;
+        border: 2px solid var(--color-dark-primary);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem;
+        box-sizing: border-box;
+        border-radius: 0.5rem;
+        
+      margin-bottom:1rem ;
+        h4{
+          margin: 0;
+        }
+        b{
+          font-size: var(--xxsmall);
+        }
+        button{
+          background-color: var(--color-dark-primary);
+          color: #fff;
+          border: none;
+          border-radius: 0.5rem;
+          padding: 0.5rem 1rem;
+          font-size: var(--xxxsmall);
+          font-weight: 500;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+ 
+}

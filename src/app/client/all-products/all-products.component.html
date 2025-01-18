@@ -1,0 +1,97 @@
+<img src="assets\CAROUSEL(1).png" alt="">
+<div class="dividerDiv">
+    <div class="results">16 of 563 Results</div>
+    <div class="dropdown uk-inline"> 
+        <button class="uk-button uk-button-default uk-float-center">
+          Featured <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div uk-dropdown="mode: click" class="dropdown">
+          <ul style="cursor: pointer;">
+            <li>Discount</li>
+            <li>Price: High to Low</li>
+            <li>Price: High to Low star</li>
+            <li>Latest</li>
+            <li>Featured</li>
+          </ul>
+        </div>
+    </div>
+</div>
+<main>
+  <aside>
+    <div class="filterHeading">Filter By</div>
+    <ol>
+      <li id="filters">
+        <span>Price</span>
+        <ul>
+          <li>
+            <div class="col">
+              <mat-checkbox value="5000" >Under &#x20B9;5000</mat-checkbox>
+              <mat-checkbox value="1020">&#x20B9;10000 - &#x20B9;20000</mat-checkbox>
+              <mat-checkbox value="2030">&#x20B9;20000 - &#x20B9;30000</mat-checkbox>
+              <mat-checkbox value="3040">&#x20B9;30000 - &#x20B9;40000</mat-checkbox>
+              <mat-checkbox value="4050">&#x20B9;40000 - &#x20B9;50000</mat-checkbox>
+              <mat-checkbox value="5060">&#x20B9;50000 - &#x20B9;60000</mat-checkbox>
+            </div>
+          </li>
+          <li>
+            <div class="range">
+              &#8377;<input type="text" placeholder="Min">
+            </div>
+            <div class="range">
+              &#8377;<input type="text" placeholder="Max">
+            </div>
+            <button>Go</button>
+          </li>
+        </ul>
+      </li>
+      <li id="filters">
+        <span>Weight</span>
+        <div class="col">
+          <mat-checkbox>0 - 2 g</mat-checkbox>
+          <mat-checkbox>2 - 10 g</mat-checkbox>
+          <mat-checkbox>10 - 30 g</mat-checkbox>
+          <mat-checkbox>30 - 40 g</mat-checkbox>
+          <mat-checkbox>40 - 50 g</mat-checkbox>
+        </div>
+      </li>
+      <li id="filters">
+        <span>Product Type</span>
+            <div class="col">
+              <mat-checkbox value="Earrings (5743)">Earrings (5743)</mat-checkbox>
+              <mat-checkbox value="Rings (5743)">Rings (5743)</mat-checkbox>
+              <mat-checkbox value="Necklaces (5743)">Necklaces (5743)</mat-checkbox>
+              <mat-checkbox value="Pendants (5743)">Pendants (5743)</mat-checkbox>
+              <mat-checkbox value="Bracelets (5743)">Bracelets (5743)</mat-checkbox>
+            </div>
+       </li>
+      <li id="filters">
+        <span>Material</span>
+        <div class="col">
+          <mat-checkbox value="Gold"><img src="assets\15kGold.svg" alt="">Gold</mat-checkbox>
+          <mat-checkbox value="Diamond"><img src="assets\diamond.svg" alt="">Diamond</mat-checkbox>
+          <mat-checkbox value="Gemstone"><img src="assets\GEM.png" alt="">Gemstone</mat-checkbox>
+        </div>
+      </li>
+      <li id="filters">
+        <span>Metal</span>
+        <div class="col">
+          <mat-checkbox value="18 KT Yellow (5743)"><img src="assets\18kGold.svg" alt="">18 KT Yellow (5743)</mat-checkbox>
+          <mat-checkbox value="18 KT Rose (5743) "><img src="assets\18kRoseGold.svg" alt="">18 KT Rose (5743)</mat-checkbox>
+          <mat-checkbox value="15 KT Three Tone (5743) "><img src="assets\15kGold.svg" alt="">15 KT Three Tone (5743)</mat-checkbox>
+          <mat-checkbox value="14 KT Yellow (5743) "><img src="assets\14kGold.svg" alt="">14 KT Yellow (5743)</mat-checkbox>
+        </div>
+      </li>
+    </ol>
+  </aside>
+  <section>
+    <ul class="products">
+      <li *ngFor="let product of products">
+        <app-product-widget [product_name]="product.name"
+         [category]="product.category" [liked]="product.category" 
+         [src]="product.src" [price]="product.price" [purity]="product.purity"
+          [discount]="product.discount" [liked]="product.liked" 
+          [tag]="product.tag"></app-product-widget>
+      </li>
+    </ul>
+  </section>
+</main>

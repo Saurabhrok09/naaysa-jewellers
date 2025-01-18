@@ -1,0 +1,47 @@
+
+<div class="cart-main">
+  <div class="cart-items">
+      <h1>Select</h1>
+      <hr class="aa">
+
+      <div class="parent-container">
+        <app-address-card></app-address-card>
+        <app-address-card></app-address-card>
+        <!-- <app-address-card></app-address-card> -->
+    </div>
+<section class="billAddressSection">
+<h5 class="billAddress">Billing Address</h5>
+<div class="billAddressBox">
+  <div class="billAddressinputBox">
+    <input type="radio" name="pay-mode"  >
+    <p class="billAddressinputBoxText">Same as Shipping Address</p>
+  </div>
+  <div class="billAddressinputBox">
+
+    <input type="radio" name="pay-mode"  (click)="toggleHidden()">
+    <p class="billAddressinputBoxText">Use a Different Address</p>
+
+  </div>
+  <div>
+
+  </div>
+</div>
+<div  *ngIf="!hidden" id="differentAddress">
+  <div class="containerHidden " >
+    <app-address-card></app-address-card>
+    <div class="containerDH" routerLink="../add-delivery-address">
+      <img src="../../../assets/CART/Plus-Vector.png" alt=""class="containerHiddenImg">
+      <p class="containerHiddenText">Add New Address</p>
+    </div></div>
+</div>
+
+</section>
+<div>
+
+</div>
+</div>
+<div class="cart-price ">
+<app-order-summary></app-order-summary></div>
+
+</div>
+

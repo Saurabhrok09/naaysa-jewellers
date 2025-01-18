@@ -1,0 +1,30 @@
+section{
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    table{
+        td{
+            p{
+                margin: 10px auto;
+            }
+            input{
+                width: 180px;
+                border: 2px solid var(--color-secondary);
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+                padding: 10px;
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+    }
+    .actions{
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        button{
+            --mdc-filled-button-label-text-color:white !important;
+        }
+    }
+}

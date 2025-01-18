@@ -1,0 +1,22 @@
+section {
+  padding: 30px;
+  background: white;
+  border-radius: 20px;
+  .add > form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  li {
+    padding: 10px;
+    border-bottom: 1px lightgray solid;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    p {
+      height: min-content;
+      font-size: 17px;
+    }
+  }
+}

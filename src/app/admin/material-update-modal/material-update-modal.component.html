@@ -1,0 +1,24 @@
+<section>
+    <table class="uk-table uk-table-hover uk-table-divider">
+        <thead>
+            <tr>
+                <th>Sr. No</th>
+                <th>Material</th>
+                <th>Previous Value</th>
+                <th>New Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let material of variants;let i = index">
+                <td><p>{{i+1}}</p></td>
+                <td><p>{{material.name}}</p></td>
+                <td><p>{{material.rate}}</p></td>
+                <td><input type="number" [(ngModel)]="material.newRate" [ngModelOptions]="{standalone:true}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="actions">
+        <button mat-stroked-button color="primary" (click)="cancel()">Cancel</button>
+        <button mat-flat-button color="primary" (click)="save()">Save</button>
+    </div>
+</section>

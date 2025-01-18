@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <div class="header">
+
+    
+    <div class="uk-margin">
+      <form class="uk-search uk-search-default">
+        <span class="uk-search-icon-flip" uk-search-icon></span>
+        <input class="uk-search-input" type="search" placeholder="Search" />
+      </form>
+      <i class="fa-solid fa-bell" id="bell"></i>
+    </div>
+    <div class="links">
+      <button (click)="manageCategories()"><i class="fa-solid fa-tags"></i>Manage Categories</button>
+      <button><i class="fa-solid fa-toggle-on"></i>Pretty View</button>
+      <!-- <button *ngIf="path==='/admin/products'"><i class="fa-solid fa-plus"></i>Add Products</button> -->
+      <button *ngIf="path === '/admin/offers'" uk-toggle="target: #add-offers-modal">
+        <i class="fa-solid fa-plus"></i>Add Offers
+      </button>
+
+      <button *ngIf="path === '/admin/products'" (click)="addProduct()">
+        <i class="fa-solid fa-plus"></i>Add Products
+      </button>
+
+      <button class=" ">
+        <i class="fa-solid fa-bars"></i> View By
+      </button>
+      <div uk-dropdown="mode: click">
+        <ul>
+          <li >Table</li>
+          <li >Card</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="table_view">
+  <table>
+    <tr>
+      <th style="width: 13%">Sales</th>
+      <th style="width: 27%">Name & Description</th>
+      <th style="width: 30%">Customizable Options</th>
+      <th style="width: 15%">Reviews</th>
+      <th style="width: 15%">Action</th>
+    </tr>
+    <tr  routerLink="../products/details" *ngFor="let product of products">
+      <td>
+        <img [src]="product.images[0]" alt="" />
+      </td>
+      <td class="name_description">
+        <!-- <h3 style="color: rgb(51, 232, 51)">₹ 5,00,000</h3> -->
+        <b>{{product.name}}</b>
+        <p>
+          {{product.description}}
+        </p>
+      </td>
+      <td class="customize">
+        <h4 *ngFor="let material of product.materials"><b>{{material.name}} :</b> {{material.selectedMaterial | materialVariants}}</h4>
+      </td>
+      <td class="ratings">
+        <app-stars [rating]="product.averageRating"></app-stars>
+      </td>
+      <td class="actions">
+        <button style="background-color: #5c5c5c">
+          <i class="fa-solid fa-circle-xmark"></i>Disable
+        </button>
+        <button style="background-color: #e88f9f">
+          <i class="ri-delete-bin-3-line"></i> Delete
+        </button>
+        <button style="background-color: #ffd5dc">
+          <i class="ri-edit-fill"></i>Edit
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,46 @@
+<section>
+  <div class="actions">
+    <button mat-flat-button color="primary" (click)="addMaterial()">
+      Add New Material
+    </button>
+    <button mat-flat-button color="primary">Edit Prices</button>
+  </div>
+  <ul uk-accordion>
+    <li *ngFor="let material of materials">
+      <a class="uk-accordion-title">
+        <div class="spreadRow">
+          <span
+            >Name: <strong>{{ material.name }}</strong></span
+          ><span
+            >Variants: <strong>{{ material.variants.length }}</strong></span
+          >
+        </div>
+      </a>
+      <div class="uk-accordion-content">
+        <div class="detail">
+            <button mat-flat-button color="primary">Edit</button>
+            <button mat-stroked-button color="primary">Delete</button>
+        </div>
+        <hr>
+        <span *ngFor="let color of material.colors">
+          {{color.name}}
+        </span>
+        <hr>
+        <table class="uk-table uk-table-divider uk-table-hover uk-table-expand">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let variant of material.variants">
+              <td>{{ variant.name }}</td>
+              <td>{{ variant.rate }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </li>
+  </ul>
+</section>

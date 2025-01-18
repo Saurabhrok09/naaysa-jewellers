@@ -1,0 +1,20 @@
+<section>
+  <h1>Categories Manager</h1>
+  <div class="add">
+    <form [formGroup]="categoryForm" (ngSubmit)="addCategory()">
+      <mat-form-field appearance="outline">
+        <mat-label>Category</mat-label>
+        <input type="text" matInput formControlName="name" />
+      </mat-form-field>
+      <button type="submit" mat-flat-button color="primary">
+        <mat-icon>add</mat-icon> Add
+      </button>
+    </form>
+  </div>
+  <ol>
+    <li *ngFor="let category of categories">
+      <p>{{ category.name }}</p>
+      <button mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
+    </li>
+  </ol>
+</section>

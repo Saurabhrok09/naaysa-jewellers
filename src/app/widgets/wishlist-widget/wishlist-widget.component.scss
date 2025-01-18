@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    background-color: var(--color-gold-light);
+    height: 19rem;
+    width: 20rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    .image{
+      height: 60%;
+      width: 90%;
+      padding: 1.3rem;
+      img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+    }
+  
+    .box {
+      margin: auto;
+      text-align: center;
+      h5{
+        font-family: var(--font-three);
+        font-size: 1.7rem;
+      }
+      hr{
+        width: 50%;
+        height: 1px ;
+        margin:0.5rem  auto;
+        background-color: var(--color-gold);
+      }
+      p{
+        margin: 0.5rem auto;
+        color: var(--color-secondary);
+        font-size: 0.9rem;
+        font-weight: 600;
+        &:hover{
+          color: var(--color-tertiary);
+        }
+      }
+    }
+  }
+  
+  

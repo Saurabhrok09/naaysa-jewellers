@@ -1,0 +1,156 @@
+<div class="container">
+
+
+    <div class="img-overlay">
+        <div class="uk-inline">
+            <img src="assets/shop.png" alt="">
+            <div class="uk-overlay uk-overlay-default uk-position-center">
+                <p>The Naaysa Store</p>
+                <p>Our store are contemporary places thst offers an immersive jewellery shopping experience.</p>
+            </div>
+        </div>
+    </div>
+    <div class="address">
+        <div class="list">
+            <div class="box">
+                <p>List</p>
+            </div>
+            <div class="card">
+                <div class="places">
+                    <p class="city">Prayagraj</p>
+                    <div class="content">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div class="detail">
+                            <p>36 B MG marg</p>
+                            <p>Subhash Chauraha, near raj karan palace, Civil Lines</p>
+                        </div>
+                    </div>
+                    <div class="accordion">
+                        <ul uk-accordion>
+                            <li class="uk-open">
+                                <a class="uk-accordion-title" href="#"></a>
+                                <div class="uk-accordion-content">
+                                    <div>
+                                        <h4 class="uk-title">Prayagraj</h4>
+                                        <p>{{store_Address}}</p>
+                                    </div>
+                                    <div class="uk-flex">
+                                        <div>
+                                            <h5 class="uk-title">Timing</h5>
+                                            <p>{{store_Timing}}</p>
+                                        </div>
+                                        <div>
+                                            <h5 class="uk-title">Contact</h5>
+                                            <p>{{store_Number}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="places">
+                    <p class="city">Prayagraj</p>
+                    <div class="content">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div class="detail">
+                            <p>36 B MG marg</p>
+                            <p>Subhash Chauraha, near raj karan palace, Civil Lines</p>
+                        </div>
+                    </div>
+                    <div class="accordion">
+                        <ul uk-accordion>
+                            <li class="uk-open">
+                                <a class="uk-accordion-title" href="#"></a>
+                                <div class="uk-accordion-content">
+                                    <div>
+                                        <h4 class="uk-title">Prayagraj</h4>
+                                        <p>{{store_Address}}</p>
+                                    </div>
+                                    <div class="uk-flex">
+                                        <div>
+                                            <h5 class="uk-title">Timing</h5>
+                                            <p>{{store_Timing}}</p>
+                                        </div>
+                                        <div>
+                                            <h5 class="uk-title">Contact</h5>
+                                            <p>{{store_Number}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="places">
+                    <p class="city">Prayagraj</p>
+                    <div class="content">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div class="detail">
+                            <p>36 B MG marg</p>
+                            <p>Subhash Chauraha, near raj karan palace, Civil Lines</p>
+                        </div>
+                    </div>
+                    <div class="accordion">
+                        <ul uk-accordion>
+                            <li class="uk-open">
+                                <a class="uk-accordion-title" href="#"></a>
+                                <div class="uk-accordion-content">
+                                    <div>
+                                        <h4 class="uk-title">Prayagraj</h4>
+                                        <p>{{store_Address}}</p>
+                                    </div>
+                                    <div class="uk-flex">
+                                        <div>
+                                            <h5 class="uk-title">Timing</h5>
+                                            <p>{{store_Timing}}</p>
+                                        </div>
+                                        <div>
+                                            <h5 class="uk-title">Contact</h5>
+                                            <p>{{store_Number}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map">
+            <div class="box">
+                <p>Map</p>
+            </div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.141172819495!2d81.85723881501491!3d25.466961083771412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399acabf04aaaf75%3A0x702ad223256eaf4d!2sUniversity%20of%20Allahabad!5e0!3m2!1sen!2sin!4v1658513098611!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</div>
+<div class="mobile-view">
+    <mat-tab-group mat-align-tabs="start">
+        <mat-tab label="List">
+            <app-mobile-store-address-widget *ngFor="let widgets of address_widget" [City]="widgets.City"
+                [small_Address]="widgets.small_Address" [Address]="widgets.Address"></app-mobile-store-address-widget>
+        </mat-tab>
+        <mat-tab label="Map"><iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.141172819495!2d81.85723881501491!3d25.466961083771412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399acabf04aaaf75%3A0x702ad223256eaf4d!2sUniversity%20of%20Allahabad!5e0!3m2!1sen!2sin!4v1658513098611!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe></mat-tab>
+    </mat-tab-group>
+    <div class="features">
+        <p id="heading">
+            Nyaasa's Promise
+        </p>
+        <div class="widget">
+            <app-feature-widget *ngFor="let feature of feature_widget" [src]="feature.src"
+                [text_Feature]="feature.text_Feature"></app-feature-widget>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

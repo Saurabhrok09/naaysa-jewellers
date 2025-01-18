@@ -1,0 +1,24 @@
+#heading{
+  font-size: var(--medium);
+  font-family: var(--font-three);
+  font-weight: 500;
+  margin: 15px;
+  margin-left: 20px;
+}
+.widget{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+    app-product-widget{
+      width: 20%;
+    }
+}
+@media only screen and (max-width: 600px){
+  .widget{
+    flex-wrap: wrap;
+    app-product-widget{
+      width: 48%;
+    }
+  }
+}

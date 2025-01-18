@@ -1,0 +1,136 @@
+
+<div class="cart-main">
+    <div class="cart-items uk-animation-slide-left-medium">
+        <h1>Cart</h1>
+        <hr class="aa">
+        <app-cart-added-item *ngFor="let item of cartItems" [imgsrc]="item.src" [item_name]="item.name" [item_date]="item.date"  [item_no]="item.no" [item_quantity]="item.quantity" [item_price]="item.price"[item_save]="item.save" [stock]="item.stock" [item_count]="'1'" [total_price]="item.totalprice"></app-cart-added-item>
+    </div>
+
+ <div class="uk-animation-slide-right-medium">
+<div>
+  <div class="deliveryDateBox">
+    <p class="deliveryDateText">
+      <img src="../../../assets/CART/Mask group.png" class="deliveryImg" alt="" srcset="">
+       Deliver to 364000</p>
+    <p class="changeOption" (click)="openPincode()">Change</p>
+  </div>
+    <div class="applyBox">
+
+      <div (click)="applyCoupon()" class="applyBoxText">
+        <img src="../../../assets/CART/Group.svg" alt="" class="applyBoxTextImg">
+        Apply Coupon  <p class="applyBoxSubText"> - 2 Available</p></div>
+
+
+       <div><img src="../../../assets/CART/Vector.png" alt=""></div>
+    </div>
+</div>
+<div class="cart-price ">
+    <p id="heading">Order Summary</p>
+
+    <hr id="hr">
+
+    <div class="bill">
+        <div class="uk-flex subtotal">
+            <p class="billItems">Subtotal</p>
+            <p class="billItems">{{subtotal}}</p>
+        </div>
+        <div class="uk-flex">
+            <p class="billItems">Discount</p>
+            <p class="billItems">-{{discount}}</p>
+        </div>
+        <div class="uk-flex">
+            <p class="billItems">{{material}}</p>
+            <p class="billItems">{{material_Price}}</p>
+        </div>
+        <div class="uk-flex">
+            <p class="billItems">GST</p>
+            <p class="billItems">{{gst}}</p>
+        </div>
+        <div class="uk-flex">
+            <p class="billItems">Tax</p>
+            <p class="billItems">{{tax}}</p>
+        </div>
+        <div class="uk-flex">
+            <p class="billItems">Delivery</p>
+            <p class="billItems">{{delivery}}</p>
+        </div>
+        <hr id="hr" class="hrDash">
+        <div class="uk-flex subtotal">
+            <p class="totalBillAmount">Total</p>
+            <p class="totalBillAmount">{{total}}</p>
+        </div>
+        <button class="primary-button" class="checkOutButton" routerLink="../choose-delivery-address">
+          Checkout Securely
+        </button>
+    </div>
+</div>
+ </div>
+
+</div>
+<div class="mobile-view">
+    <p id="heading"><span uk-icon="cart"></span>Cart</p>
+    <hr id="hr-mobile">
+    <div class="widget">
+        <app-mobile-cart-widget></app-mobile-cart-widget>
+        <app-mobile-cart-widget></app-mobile-cart-widget>
+    </div>
+    <div class="exchange">
+        <p><span><i class="fa-solid fa-arrow-right-arrow-left"></i> Lifetime Exchange & Buy-Back</span></p>
+        <p>|</p>
+        <p><span>30-Day Money Back <i class="fa-solid fa-arrow-rotate-left"></i></span></p>
+    </div>
+    <div class="off">
+        <p>30% off Discount</p>
+        <div class="code">
+            <input type="text" placeholder="PROMOCODE">
+            <button>Apply</button>
+        </div>
+    </div>
+    <div class="mobile-bill">
+        <div class="uk-flex heading">
+            <p>Order Summary</p>
+            <p>{{delivery_Date}}</p>
+        </div>
+        <hr>
+        <div class="bill-info">
+            <div class="uk-flex">
+                <p>Subtotal</p>
+                <p>{{subtotal}}</p>
+            </div>
+            <div class="uk-flex">
+                <p>You saved</p>
+                <p>{{saved}}</p>
+            </div>
+            <div class="uk-flex">
+                <p>Discount Coupon</p>
+                <p>{{discount}}</p>
+            </div>
+            <div class="uk-flex">
+                <p>Gold</p>
+                <p>{{material_Price}}</p>
+            </div>
+            <div class="uk-flex">
+                <p>GST</p>
+                <p>{{gst}}</p>
+            </div>
+            <div class="uk-flex">
+                <p>Tax</p>
+                <p>{{tax}}</p>
+            </div>
+            <div class="uk-flex">
+                <p>Delivery</p>
+                <p>{{delivery}}</p>
+            </div>
+            <hr>
+            <div class="uk-flex" id="mart">
+                <p>Amount Payable</p>
+                <p>{{total}}</p>
+            </div>
+
+        </div>
+    </div>
+    <button class="place" routerLink="../choose-delivery-address">
+        Place Order
+    </button>
+</div>
+<!-- <app-footer></app-footer> -->

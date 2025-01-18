@@ -1,0 +1,36 @@
+.container {
+    margin: 10px;
+    padding: 10px 15px;
+    width: 100%;
+    border: 2px solid var(--color-dark-primary);
+    background-color: #fff;
+    border-radius: 10px;
+    width: 300px;
+
+    .parent-container {
+        display: flex;
+        align-items: center;
+    }
+
+    img {
+        max-width: 65px;
+        max-height: 65px;
+        object-fit: cover;
+    }
+
+    .details {
+        margin-left: 15px;
+        margin-top: 5px;
+
+        p:nth-child(1) {
+            font-weight: 500;
+            font-size: var(--msmall);
+            color: rgb(48, 48, 48);
+        }
+
+        p:nth-child(2) {
+            font-size: var(--xsmall);
+            font-weight: 450;
+        }
+    }
+}

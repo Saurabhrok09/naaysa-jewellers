@@ -1,0 +1,23 @@
+<div class="container .uk-animation-fade">
+  <div class="imageBox">
+      <div class="heart" (click)="liked = !liked">
+        <img *ngIf="liked" src="assets\likedWishlist.svg" alt="">
+        <img *ngIf="!liked" src="assets\unlikedWishlist.svg" alt="">
+      </div>
+    <div *ngIf="!isLoaded; then altImage"></div>
+    <div class="image" routerLink="../product">
+      <!-- <img src="assets\BIRS0279R20-POSTER-11100.jpg.png" (load)="isLoaded=true" alt="" /> -->
+      <img [src]="src" (load)="isLoaded=true" *ngIf="isLoaded" alt="" />
+      <ng-template #altImage><img class="altImage"src="assets\NAAAYSA LOGO.svg" alt=""></ng-template>
+    </div>
+
+    <div class="badges">
+      <div class="bestSeller">{{tag | titlecase}}</div>
+    </div>
+  </div>
+  <div class="priceInfo">
+    <div id="price">&#x20B9;{{ price }} <del> &#8377;{{ price + 10000 }}</del></div>
+    <div id="name">{{ product_name }}</div>
+    <div id="similar"><a href="">View Similar</a></div>
+  </div>
+</div>

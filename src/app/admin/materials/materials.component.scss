@@ -1,0 +1,37 @@
+button{
+    --mdc-filled-button-label-text-color:white !important;
+}
+hr{
+    border: 1.8px solid #B5B5B5;
+    height: 0px;
+    margin: 10px 0px;
+}
+section{
+    .actions{
+        display: flex;
+        justify-content: flex-end;
+        gap:30px;
+    }
+    ul{
+        margin-top: 20px;
+        li{
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            border:none;
+            padding: 10px;
+            .spreadRow{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 20px;
+                strong{
+                    color: var(--color-tertiary);
+                    font-weight: 600;
+                }
+            }
+            .detail{
+                display: flex;
+                gap: 20px;
+            }
+        }
+    }
+}

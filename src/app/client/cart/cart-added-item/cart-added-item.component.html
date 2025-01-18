@@ -1,0 +1,37 @@
+ <section class="cartBox">
+<div class="cartImg">
+  <img src="{{imgsrc}}" alt="item-photo">
+</div>
+<div class="cartItemBox">
+  <div>
+    <h3 class="itemDetailsName">{{item_name}}</h3>
+    <h4 class="Jnumber">{{item_no}}</h4>
+    <div class="columnDiv">
+      <p class="quantity">Quantity: {{item_quantity}}</p>
+        <p class="{{stock}} stockItem">{{stock}}</p>
+     </div>
+     <p class="deliveryDay">Delivery Date : {{item_date}}</p>
+  </div>
+
+  <div>
+    <div class="columnPrice">
+      <p id="price" class="totalPrice">{{total_price}}</p>
+      <p class="price">₹ {{item_price}}</p>
+    </div>
+
+      <p class="save">Save : {{item_save}}</p>
+    </div>
+
+    <div class="inputBtn">
+      <button type="button" (click)="plus()"><i class="fa fa-plus"></i></button>
+      <input type="text" [value]="quantityValue">
+      <button type="button" (click)="minus()"><i class="fa fa-minus"></i></button>
+    </div>
+
+      <div class="buttonGroup">
+        <button id="normal" (click)="delete()" class="remove"> Remove</button>
+          <button (click)="alert()" class="wishButton">Move to Wishlist</button>
+      </div>
+
+</div>
+ </section>

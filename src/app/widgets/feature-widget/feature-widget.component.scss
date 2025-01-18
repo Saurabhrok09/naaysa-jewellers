@@ -1,0 +1,13 @@
+.container{
+    text-align: center;
+    padding: 10px;
+    background-color: var(--color-primary);
+    display: inline-block;
+    border-radius: 15px;
+    border: 1px solid var(--color-dark-primary);
+    font-size: 10px;
+    img{
+        width: 45%;
+        margin-bottom: 15px; 
+    }
+}

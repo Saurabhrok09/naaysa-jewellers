@@ -1,0 +1,40 @@
+<section>
+    <div class="signup_details">
+        <div class="container">
+
+            <img src="assets/logo.svg" alt="">
+            <p id="">Naaysa</p>
+        </div>
+        <div class="mobile-img" >
+          <div class="mob-logo">
+          <img class="m-logo" src="assets/logo.svg" alt="">
+          <p id="m-logot">Naaysa</p>
+        </div>
+          <img class="m-image2" src="../../../assets/blog3.png" >
+        </div>
+      <form>
+        <b routerLink="/">Login</b>
+        <div class="input_conatiner">
+          <label>Email</label>
+          <input type="email" formControlName="email" placeholder="username@host.com" />
+        </div>
+        <div class="input_conatiner">
+          <label>Password</label>
+          <input type="password" formControlName="password" placeholder="Password" />
+        </div>
+        <div class="authentication">
+          <button type="submit" routerLink="/">Login</button>
+        </div>
+        <span routerLink="/forgot-password">Forgot Password?</span>
+        <button id="normal">
+            <i class="fa-brands fa-google"></i>
+            Continue With Google
+        </button>
+        <span>
+          Don't have an account?
+          <p routerLink="../signup">Signup</p>
+        </span>
+      </form>
+    </div>
+    <img src="../../../assets/blog3.png" id="mobile-imgg" />
+</section>
